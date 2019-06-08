@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="<%= lang || 'ru' %>">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  
+  <title>Автоломбард</title>
+
+</head>
+<body>
+
+<%= require('./templates/header.ejs')({ bg: false }) %>
+
+<main class="wrapper">
+  <section class="landing-hero landing-hero_avtolombard">
+    
+    <div class="s-hero">
+      <div class="container">
+        <h1 class="s-hero__title">Быстрый займ под залог в автоломбарде</h1>
+        <p class="s-hero__description">Позвоните или оставьте заявку<br> и получите займ в ближайший час.</p>
+        <button class="s-hero__btn btn">Рассчитать займ</button>
+        
+        <div class="play-video">
+          <button class="play-video__button">
+            <i class="icon icon-play"></i>
+          </button>
+          <div class="play-video__text">
+            Посмотрите<br> видео <b>о компании</b>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <%= require('./templates/c-breadcrumb.ejs')({ breadcrumb: ['Главная', 'Займы', 'Автоломбард'] }) %>
+      </nav>
+    </div>
+    
+    <div class="s-benefits">
+      <div class="container">
+        <ul class="s-benefits__list">
+          <li class="s-benefits__item">
+            <img src="<%= require('./img/s-benefits-img-1.png') %>" alt="" class="s-benefits__icon">
+            <h3 class="s-benefits__title">Ставка</h3>
+            <div class="s-benefits__text">от 5 % в месяц</div>
+          </li>
+          <li class="s-benefits__item">
+            <img src="<%= require('./img/s-benefits-img-2.png') %>" alt="" class="s-benefits__icon">
+            <h3 class="s-benefits__title">Сумма</h3>
+            <div class="s-benefits__text">до 10 000 000 руб</div>
+          </li>
+          <li class="s-benefits__item">
+            <img src="<%= require('./img/s-benefits-img-3.png') %>" alt="" class="s-benefits__icon">
+            <h3 class="s-benefits__title">Период</h3>
+            <div class="s-benefits__text">До 10 лет</div>
+          </li>
+          <li class="s-benefits__item">
+            <img src="<%= require('./img/s-benefits-img-4.png') %>" alt="" class="s-benefits__icon">
+            <h3 class="s-benefits__title">30 минут</h3>
+            <div class="s-benefits__text">Время оформления</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+  <%= require('./templates/s-calc.ejs')({lang: lang}) %>
+  
+  <%= require('./templates/s-scheme.ejs')({lang: lang}) %>
+  
+  <%= require('./templates/s-conditions.ejs')({
+    lang: lang,
+    title: 'Условия кредитования у нас',
+    list: [
+      'Автомобиль должен быть исправен',
+      'Вы должны являться собственником',
+      'Авто не должно быть заложено в других кредитных организациях',
+      'Техника должна быть растоможена',
+      'Заемщику должно быть не менее 18 лет'
+    ]
+  }) %>
+  
+  <section class="section s-reviews">
+    <div class="container">
+      <h2 class="s-reviews__title">Отзывы наших клиентов</h2>
+      <div class="swiper-container s-reviews__slider">
+        <div class="swiper-wrapper">
+          <figure class="swiper-slide s-reviews__item">
+            <img src="<%= require(`./img/review-img-1.jpg`) %>" alt="" class="s-reviews__image">
+            <blockquote class="s-reviews__quote">
+              Эти слова совершенно справедливы, однако интервально-прогрессийная континуальная форма начинает
+              септаккорд. Соноропериод представляет собой флэнжер. Очевидно, что крещендирующее хождение трансформирует
+              внетактовый мнимотакт.
+            </blockquote>
+            <footer class="s-reviews__footer"><cite class="s-reviews__name">Петров Евгений</cite></footer>
+          </figure>
+          <figure class="swiper-slide s-reviews__item">
+            <img src="<%= require(`./img/review-img-1.jpg`) %>" alt="" class="s-reviews__image">
+            <blockquote class="s-reviews__quote">
+              Эти слова совершенно справедливы, однако интервально-прогрессийная континуальная форма начинает
+              септаккорд. Соноропериод представляет собой флэнжер. Очевидно, что крещендирующее хождение трансформирует
+              внетактовый мнимотакт.
+            </blockquote>
+            <footer class="s-reviews__footer"><cite class="s-reviews__name">Петров Евгений</cite></footer>
+          </figure>
+          <figure class="swiper-slide s-reviews__item">
+            <img src="<%= require(`./img/review-img-1.jpg`) %>" alt="" class="s-reviews__image">
+            <blockquote class="s-reviews__quote">
+              Эти слова совершенно справедливы, однако интервально-прогрессийная континуальная форма начинает
+              септаккорд. Соноропериод представляет собой флэнжер. Очевидно, что крещендирующее хождение трансформирует
+              внетактовый мнимотакт.
+            </blockquote>
+            <footer class="s-reviews__footer"><cite class="s-reviews__name">Петров Евгений</cite></footer>
+          </figure>
+        </div>
+        <button class="swiper-button-prev"></button>
+        <button class="swiper-button-next"></button>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section s-cases">
+    <div class="container">
+      <h2 class="s-cases__title">Какие займы мы выдали</h2>
+      <div class="case-list">
+        <div class="case-list__wrapper">
+          <div class="case-list__col">
+            <div class="case" style="background-image: url(<%= require('./img/case-1.jpg') %>)">
+              <div class="case__content">
+                <h3 class="case__title">Коттедж, 210 кв. м</h3>
+                <div class="case__text">
+                  <div>Рыночная стоимость: 4 млн руб.</div>
+                  <div>Выдано под залог: 502 300 руб.</div>
+                </div>
+                <a href="#" class="case__button">Подробнее о займе</a>
+              </div>
+            </div>
+            <div class="case" style="background-image: url(<%= require('./img/case-2.jpg') %>)">
+              <div class="case__content">
+                <h3 class="case__title">Коттедж, 210 кв. м</h3>
+                <div class="case__text">
+                  <div>Рыночная стоимость: 4 млн руб.</div>
+                  <div>Выдано под залог: 502 300 руб.</div>
+                </div>
+                <a href="#" class="case__button">Подробнее о займе</a>
+              </div>
+            </div>
+          </div>
+          <div class="case-list__col">
+            <div class="case" style="background-image: url(<%= require('./img/case-3.jpg') %>)">
+              <div class="case__content">
+                <h3 class="case__title">Коттедж, 210 кв. м</h3>
+                <div class="case__text">
+                  <div>Рыночная стоимость: 4 млн руб.</div>
+                  <div>Выдано под залог: 502 300 руб.</div>
+                </div>
+                <a href="#" class="case__button">Подробнее о займе</a>
+              </div>
+            </div>
+            <div class="case" style="background-image: url(<%= require('./img/case-4.jpg') %>)">
+              <div class="case__content">
+                <h3 class="case__title">Коттедж, 210 кв. м</h3>
+                <div class="case__text">
+                  <div>Рыночная стоимость: 4 млн руб.</div>
+                  <div>Выдано под залог: 502 300 руб.</div>
+                </div>
+                <a href="#" class="case__button">Подробнее о займе</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="case-list__pagination">
+          <ul class="pagination">
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">1</a>
+            </li>
+            <li class="pagination__item active">
+              <a class="pagination__link" href="#">2</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">3</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">...</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+  
+  <%= require('./templates/s-request.ejs')({
+    lang: lang,
+    phone: phone,
+    title: 'Оставьте заявку и получите займ <span class="selected">уже сегодня!</span>'
+  }) %>
+  
+  <section class="section s-info">
+    <div class="container">
+      <h2 class="s-info__title">Займ под залог квартиры и загородного дома</h2>
+      <div class="s-info__text">
+        <p>Кредитование на особо крупные суммы всегда вызывало массу вопросов и сложностей. Обычно к такому решению приходят либо в чрезвычайных ситуациях (например, болезнь), либо при желании основать собственный бизнес. Реже — для инвестирования.</p>
+        <p>Альтернативный вариант получения большого кредита — получить займ под залог недвижимости в Ташкенте. В таком случае заемщик подписывает договор, согласно которому его имущество перейдёт кредитору в случае невыполнения долговых обязательств.</p>
+        <p>В Ташкенте обратиться за такой услугой можно в два типа организаций: банки и микрофинансовые компании. Каждая сторона имеет свои особенности и сильные стороны, потому выбрать порой достаточно сложно.</p>
+        <p>Ниже — наглядное обозрение обоих вариантов и условия кредитования.</p>
+      </div>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion__item">
+          <div class="accordion__header" id="headingOne">
+            <h3 class="mb-0">
+              <a class="accordion__title" data-toggle="collapse" data-target="#collapseOne">
+                Особенности кредитования
+              </a>
+            </h3>
+          </div>
+          
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="accordion__body">
+              <p>Кредитование под залог — финансовые отношения, при которых займ предоставляется в обмен на какое-то
+                ценное движимое и недвижимое имущество:</p>
+              <ul>
+                <li>Жилье;</li>
+                <li>Автомобиль или спецтранспорт;</li>
+                <li>Другие ценности, в зависимости от условий кредитора.</li>
+              </ul>
+              <p>Вернее, стороны заключают особый договор, согласно которому оно может перейти кредитору. Если заемщик
+                успешно погасил задолженность, его имущество возвращается; в противном случае его продают, тем самым
+                возмещая убыток. Сделка подтверждается официальным документом, имеющим юридическую силу.</p>
+              <p>При этом стоит учитывать, что не все материальные ценности принимаются в качестве залога: например,
+                ювелирные украшения актуальны далеко не всегда.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion__item">
+          <div class="accordion__header" id="headingTwo">
+            <h3 class="mb-0">
+              <a class="accordion__title collapsed" data-toggle="collapse" data-target="#collapseTwo">
+                Преимущества
+              </a>
+            </h3>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="accordion__body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+              moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+              Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+              shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+              proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
+              aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+        <div class="accordion__item">
+          <div class="accordion__header" id="headingThree">
+            <h3 class="mb-0">
+              <a class="accordion__title collapsed" data-toggle="collapse" data-target="#collapseThree">
+                Займы в ArtMoney
+              </a>
+            </h3>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="accordion__body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+              moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+              Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+              shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+              proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
+              aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%= require('./templates/footer.ejs')() %>
+
+<form action="/form.php" class="modal" id="call-me" method="post" style="display: none;">
+  <h2 class="modal__title">Закажите звонок</h2>
+  <p class="modal__description">
+    И наш специалист свяжется с Вами <br><span class="selected">в течение 5 минут</span>
+  </p>
+  <div class="modal__form">
+    <div class="form-vertical">
+      <div class="form-vertical__input-container">
+        <div class="input-group input-group_icon">
+          <svg class="input-group__icon">
+            <use xlink:href="images/sprite.svg#sprite-profile"></use>
+          </svg>
+          <input autocomplete="name" class="input-group__input" name="name" placeholder="Введите ФИО" required type="text">
+        </div>
+        <div class="input-group input-group_icon">
+          <svg class="input-group__icon">
+            <use xlink:href="images/sprite.svg#sprite-phone"></use>
+          </svg>
+          <input autocomplete="tel" class="input-group__input" name="tel" placeholder="Введите телефон" required type="tel">
+        </div>
+      </div>
+      <div class="form-vertical__button-container">
+        <button class="btn" type="submit">Оформить сейчас!</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="modal" id="thanks" style="display: none;">
+  <h2 class="modal__title">Спасибо за заявку!</h2>
+  <p class="modal__description">
+    Наш специалист свяжется с Вами <br><span class="selected">в течение 5 минут</span>
+  </p>
+  <button class="btn" data-fancybox-close>Ок</button>
+</div>
+
+<script>
+  const app = {
+    units: {
+      price: 'сўм',
+      month: ['месяц', 'месяца', 'месяцев'],
+      percent: '%',
+    },
+    calculator: {
+      data: {
+        price: {
+          id: 'calc-price',
+          type: 'price',
+          min: 0,
+          max: 305 * 1000000,
+          value: 10 * 1000000,
+          step: 1000000,
+        },
+        term: {
+          id: 'calc-term',
+          type: 'month',
+          min: 13,
+          max: 60,
+          value: 60,
+          step: 1,
+        },
+      },
+      total: {
+        id: 'calc-total',
+        type: 'price',
+        formula: () => {
+          // Переплата в год
+          const rate = 0.25;
+
+          // Итоговая сумма кредита
+          const total = app.calculator.data.price.value;
+          // Расчет аннуитетного платежа, где rate - ставка в месяц
+          // return Math.ceil( total * rate / (1 - Math.pow(1 + rate, 0 - app.calculator.data.term.value)));
+
+          return Math.ceil(total * (rate * app.calculator.data.term.value + 12) / (12 * app.calculator.data.term.value));
+        },
+      },
+    },
+    mapOptions: {
+      center: [41.240084, 69.216396],
+      zoom: 16,
+      controls: [],
+      url: 'https://api-maps.yandex.ru/2.1/?lang=ru_RU',
+    },
+  };
+</script>
+</body>
+</html>

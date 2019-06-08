@@ -1,0 +1,32 @@
+.page-hero {
+  margin-top: 82px;
+  padding-top: 10px;
+  padding-bottom: 34px;
+  @include media-breakpoint-up(md) {
+    margin-top: 155px;
+    padding-top: 20px;
+    padding-bottom: 54px;
+  }
+  @include media-breakpoint-up(xl) {
+    margin-top: 168px;
+    padding-top: 45px;
+    padding-bottom: 64px;
+  }
+
+  &__breadcrumb {
+    margin-bottom: 88px;
+  }
+}
+.article {
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__banner {
+    margin-left: ($grid-gutter-width / -2);
+    margin-right: ($grid-gutter-width / -2);
+    @include media-breakpoint-up(md) {
+      margin: 0 0 2rem;
+    }
+  }
+}

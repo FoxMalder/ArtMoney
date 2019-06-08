@@ -1,0 +1,568 @@
+.landing-hero {
+  position: relative;
+  padding-top: 39px;
+  padding-bottom: 53px;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 82px;
+    padding-bottom: 0;
+    text-align: left;
+  }
+  @include media-breakpoint-up(xl) {
+    height: (965px - 276px);
+    padding-top: 120px;
+  }
+  //&__inner {
+  //  position: relative;
+  //}
+
+  &__title {
+    margin-bottom: 28px;
+    font-size: 40px;
+    line-height: 45px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 24px;
+      font-size: 44px;
+      line-height: 50px;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 56px;
+      line-height: 1.16;
+    }
+  }
+
+  &__description {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 23px;
+    @include media-breakpoint-up(md) {
+      font-size: 18px;
+      line-height: 23px;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+  }
+
+  &__list {
+
+    margin-bottom: 44px;
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+      top: 51px;
+      left: calc(50% - #{1920/2 - 916px});
+      width: 537px;
+      height: 537px;
+    }
+  }
+}
+
+@mixin circle-coord($angle, $radius: 268.5) {
+  $angle: ($angle % 360);
+  $angle: if($angle < 0, $angle + 360, $angle);
+
+  left: ($radius + $radius * cos($angle)) * 1px;
+  top: ($radius - $radius * sin($angle))* 1px;
+  @if $angle > 90deg and $angle < 270deg {
+    transform: translateX(-100%);
+    text-align: right;
+    padding-left: 0;
+    padding-right: 26px;
+    &::before {
+      right: 0;
+      left: auto;
+      transform: translate(50%, -50%);
+    }
+  }
+}
+
+.hero-points {
+  $circle-radius: 537 / 2;
+
+  display: flex;
+  position: relative;
+  //justify-content: center;
+  flex-wrap: wrap;
+
+  @include media-breakpoint-up(xl) {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba($main-color, 0.3);
+    border-radius: 50%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    //top: calc(50% - 80px);
+    //left: calc(50% - 57px);
+    top: calc(100% - 144px);
+    left: 50%;
+    width: 285px;
+    height: 144px;
+    background: url("../img/artcar/car.png") no-repeat;
+    background-size: contain;
+
+    @include media-breakpoint-up(xl) {
+      top: calc(50%);
+      left: calc(50%);
+      width: 552px;
+      height: 279px;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__point {
+    flex: 0 0 50%;
+    margin-bottom: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 16px;
+    line-height: 1.13;
+
+    @include media-breakpoint-up(md) {
+      padding-right: 0;
+      padding-left: 26px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      position: absolute;
+      margin-bottom: 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: $main-gradient;
+        box-shadow: (
+          0 0 0 4px #fff,
+          0 0 0 5px $main-color
+        );
+      }
+      &_3 {
+        @include circle-coord(66deg);
+      }
+
+      &_1 {
+        @include circle-coord(130deg);
+      }
+
+      &_5 {
+        @include circle-coord(225deg);
+      }
+
+      &_4 {
+        @include circle-coord(270deg);
+      }
+
+      &_2 {
+        @include circle-coord(330deg);
+      }
+    }
+  }
+
+  &__icon {
+    width: 37px;
+    height: 37px;
+    margin-bottom: 8px;
+    fill: $main-color;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 14px;
+    }
+    @include media-breakpoint-up(md) {
+      margin-top: -21px;
+      margin-bottom: 14px;
+    }
+  }
+}
+
+.landing-steps {
+  //height: 276px;
+  background-color: #fff;
+  //flex-direction: column;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+      text-align: left;
+      justify-content: space-between;
+    }
+    //height: 132px;
+    //background: url("../img/artcar/steps.png") no-repeat;
+    //background-size: contain;
+  }
+
+  &__step {
+    color: #979797;
+    margin-bottom: 15px;
+    padding-top: 92px;
+    font-size: 16px;
+    line-height: 18px;
+    @include media-breakpoint-up(md) {
+      padding-top: 0;
+      margin-bottom: 0;
+      max-width: 145px;
+      margin-left: 60px;
+    }
+  }
+}
+
+.landing-calculator {
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
+  padding-bottom: 405px;
+  background: $main-gradient;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 58px;
+    padding-bottom: 80px;
+  }
+
+
+  &__card {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 607px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include media-breakpoint-up(md) {
+      max-width: 100%;
+      height: 556px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: 802px;
+      margin-right: 0;
+      margin-left: auto;
+      padding-left: 84px;
+    }
+  }
+}
+
+
+.landing-about {
+  position: relative;
+  padding-top: 74px;
+  padding-bottom: 327px; // global
+
+  //opacity: .5;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 152px;
+    padding-bottom: 140px;
+  }
+
+  &__title {
+    margin-bottom: 29px;
+    //font-size: 25px;
+    //line-height: 1.2;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 26px;
+      //font-size: 36px;
+      //line-height: 1.25;
+      text-align: left;
+    }
+  }
+
+  &__list {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    max-width: 290px;
+    margin-bottom: 29px;
+    padding-left: 47px;
+    color: #8c8c8c;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.28;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background-image: $main-gradient;
+      box-shadow: 0 6px 11px 0 rgba($main-color, 0.42);
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 34px;
+    }
+  }
+}
+
+/*
+ * "Остались вопросы?"
+ */
+.section-question {
+  position: relative;
+  z-index: 1;
+  //opacity: .5;
+  //
+  .input-group + .input-group {
+    margin-top: 16px;
+  }
+
+  .form-vertical__input-container {
+    margin-bottom: 22px;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    @include media-breakpoint-up(md) {
+      justify-content: flex-end;
+      padding-right: 50px;
+    }
+  }
+
+  &__form {
+    @include card;
+
+    width: 100%;
+    max-width: 320px;
+    //margin-right: auto;
+    //margin-left: auto;
+    padding: 41px 20px 50px;
+    //background: red url("../img/rm/questions-form.png") center top no-repeat;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      max-width: 455px;
+      margin-left: auto;
+      padding: 35px 50px 53px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include media-breakpoint-up(md) {
+
+    }
+  }
+
+  &__link {
+    margin-bottom: 29px;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 17px;
+    color: #8c8c8c;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 22px;
+      padding: 0 10px;
+      font-size: 18px;
+      line-height: 1.33;
+    }
+  }
+}
+
+/*
+ * "ARTCAR - авто у вас уже через час"
+ */
+.section-slogan {
+  position: relative;
+  //background: red url("../img/rm/8.png") center -20px no-repeat;
+  //background-size: 1920px ;
+  padding-top: 78px;
+  padding-bottom: 73px;
+
+
+  @include media-breakpoint-up(md) {
+    padding-top: 215px;
+    padding-bottom: 212px;
+    background: url("../img/artcar/section-slogan-bg.jpg") center no-repeat;
+    background-size: cover;
+  }
+
+  &__circle-1 {
+    position: absolute;
+    top: 30px;
+    right: calc(50% - 200px);
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    opacity: 0.59;
+    background-image: $main-gradient;
+    pointer-events: none;
+
+    @include media-breakpoint-up(md) {
+      top: 48%;
+      right: calc(50% - #{1920 / 2 - 79px});
+      width: 115px;
+      height: 115px;
+      opacity: 0.22;
+    }
+  }
+
+  &__circle-2 {
+    position: absolute;
+    bottom: 12px;
+    left: calc(50% - 242px);
+    width: 87px;
+    height: 87px;
+    border-radius: 50%;
+    opacity: 0.22;
+    background-image: $main-gradient;
+    pointer-events: none;
+
+    @include media-breakpoint-up(md) {
+      bottom: 200px;
+      left: calc(50% - #{1920 / 2 - 236px});
+      width: 41px;
+      height: 41px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    position: relative;
+    //max-width: 360px;
+    z-index: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: -28px;
+      width: 369px;
+      height: 193px;
+      opacity: .43;
+      background: url("../img/artcar/artcar-text.png") no-repeat;
+      background-size: contain;
+      pointer-events: none;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: block;
+      max-width: none;
+      margin-top: 40px;
+      margin-left: calc(50% - #{1920 / 2 - 527px});
+      text-align: left;
+      &::before {
+        width: 526px;
+        height: 401px;
+      }
+    }
+  }
+
+  &__shield {
+    position: relative;
+    width: 67px;
+    height: 79px;
+    margin-bottom: 7px;
+    background: url("../img/artcar/shield.png") no-repeat;
+    background-size: contain;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -36px;
+      left: -26px;
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      background-image: $main-gradient;
+      pointer-events: none;
+    }
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      top: -116px;
+      left: -5px;
+      width: 85px;
+      height: 99px;
+      margin-bottom: 0;
+      &::before {
+        width: 94px;
+        height: 94px;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 16px;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.25;
+    @include media-breakpoint-up(md) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+    @include media-breakpoint-up(md) {
+      font-size: 36px;
+      line-height: 1.25;
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    margin-bottom: 0;
+    color: #979797;
+    font-size: 16px;
+    font-weight: 300;
+    @include media-breakpoint-up(md) {
+      font-size: 18px;
+    }
+  }
+}

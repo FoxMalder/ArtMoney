@@ -1,0 +1,121 @@
+.footer {
+  //height: 420px;
+  position: relative;
+  z-index: 1;
+  //padding-bottom: 30px;
+
+  //overflow: hidden;
+  background: #1e1e1e url("../img/footer-bg.jpg") center no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+
+  }
+
+  &__inner {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      height: 360px;
+      //align-items: center;
+      padding: 40px 0;
+
+
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      align-content: space-between;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    width: 140px;
+    height: 56px;
+
+    > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    max-height: 100%;
+    //flex: 1 0;
+    @include media-breakpoint-up(md) {
+      width: 520px;
+    }
+  }
+}
+
+.footer-nav {
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 4px;
+  }
+
+  &__link {
+    color: #7b7b7b;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.footer-contact {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+    & ~ & {
+      margin-top: 30px;
+    }
+  }
+
+  &__icon {
+    color: $main-color;
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 41px;
+      height: 41px;
+      border: 1px solid $main-color;
+      border-radius: 50%;
+      margin-right: 24px;
+      font-size: 12px;
+    }
+  }
+
+  &__link {
+    color: #fff;
+    font-family: $font-family-adelle;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: 0.1px;
+  }
+}

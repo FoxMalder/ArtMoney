@@ -1,0 +1,288 @@
+.select-language {
+  display: none;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+  font-size: 12px;
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__link {
+    margin-left: 10px;
+    color: $main-color;
+    text-decoration: underline;
+
+    &.active {
+      color: #343434;
+      text-decoration: none;
+    }
+  }
+}
+
+.header {
+  position: fixed;
+  z-index: $zindex-fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+  background-color: #fff;
+
+  @include media-breakpoint-up(xl) {
+    position: relative;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 82px;
+    @include media-breakpoint-up(md) {
+      height: 155px;
+    }
+    @include media-breakpoint-up(xl) {
+      height: 182px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    position: fixed;
+    z-index: -1;
+    top: 82px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 46px;
+    transform: translate(-100%, 0);
+    transition: all .3s ease;
+    background: #fff;
+    overflow: auto;
+
+    &.active {
+      transform: none;
+    }
+
+    @include media-breakpoint-up(xl) {
+      position: relative;
+      z-index: auto;
+      top: 0;
+      flex: 1 1;
+      flex-direction: row;
+      padding-top: 0;
+      transform: none;
+      background: none;
+      overflow: visible;
+    }
+  }
+
+  &__logo {
+    display: block;
+    height: 44px;
+    margin-left: auto;
+    //height: 65px;
+
+    //> img {
+    //  display: block;
+    //  width: 100%;
+    //  height: 100%;
+    //}
+    @include media-breakpoint-up(xl) {
+      height: 65px;
+      margin-left: 0;
+    }
+  }
+
+  &__switch {
+    //display: flex;
+    //display: none;
+    position: relative;
+    width: 259px;
+    margin-bottom: 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px dashed #d1d1d1;
+      border-radius: 5px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      display: flex;
+      width: 570px;
+      margin-bottom: 0;
+      margin-left: 136px;
+
+      //height: 75px;
+    }
+  }
+
+  &__switch-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex: 0 0 50%;
+    padding: 10px 0;
+    height: 77px;
+    color: inherit;
+    font-family: $font-family-adelle;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+
+    &_active,
+    &.active {
+      color: #fff;
+      text-shadow: $btn-shadow-text;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: -4px;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 77px;
+        border-radius: 5px;
+        background-color: $main-color;
+        background-image: $btn-bg-img;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        box-shadow: (
+          $btn-shadow-inner,
+          $btn-shadow-outer
+        );
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //display: none;
+    @include media-breakpoint-up(xl) {
+      align-items: flex-end;
+      margin-left: auto;
+      text-align: right;
+    }
+  }
+
+  &__tel {
+    color: inherit;
+    font-size: 20px;
+    font-weight: 500;
+
+    > .icon {
+      margin-right: 6px;
+      color: $main-color;
+      font-size: 14px;
+    }
+  }
+
+  &__call-me {
+    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid $main-color;
+    color: $main-color;
+    font-size: 18px;
+    letter-spacing: -0.4px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__social {
+    margin-top: 20px;
+    @include media-breakpoint-up(xl) {
+      display: none;
+    }
+  }
+
+  &__language {
+    margin-top: 20px;
+    @include media-breakpoint-up(xl) {
+      display: none;
+    }
+  }
+}
+
+.menu-button {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+
+  @include media-breakpoint-up(xl) {
+    display: none;
+  }
+
+  > span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    transition: all .3s ease;
+    border-radius: 3px;
+    background: $main-gradient;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all .3s ease;
+      border-radius: 3px;
+      background: $main-gradient;
+    }
+
+    &::before {
+      transform: translate(0, -9px);
+    }
+
+    &::after {
+      transform: translate(0, 9px);
+    }
+  }
+
+  &.active {
+
+    > span {
+      transform: rotate(180deg);
+      background: none;
+
+      &::before {
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

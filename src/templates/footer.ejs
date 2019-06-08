@@ -1,0 +1,107 @@
+
+<%
+const pageList1 = [
+  {
+    name: 'Под залог недвижимости',
+    url: '#'
+  }, {
+    name: 'Под залог ПТС'
+  }, {
+    name: 'Под залог автомобиля'
+  }, {
+    name: 'Автоломбард'
+  }, {
+    name: 'Под залог спецтехники'
+  }, {
+    name: 'С плохой кредитной историей'
+  }, {
+    name: 'Кредитный калькулятор'
+  }, {
+    name: 'Вопросы и ответы'
+  }
+];
+const pageList2 = [
+  {
+    name: 'О нас'
+  }, {
+    name: 'Новости'
+  }, {
+    name: 'Лицензии'
+  }, {
+    name: 'Контакты'
+  }
+];
+
+const pageList3 = [
+  {
+    name: 'Статьи'
+  }
+];
+%>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="">
+        <a class="footer__logo" href="#" title="На главную">
+          <img alt="ArtMoney" src="./../img/artmoney/logo-white.png">
+        </a>
+        <div class="footer__copyright">2019 © ArtMoney</div>
+      </div>
+      <div class="footer__menu">
+        <nav class="footer-nav">
+          <h3 class="footer-nav__title">Заемщику</h3>
+          <ul class="footer-nav__list">
+            <% for (const page of pageList1) { %>
+              <li class="footer-nav__item">
+                <a href="<%= page.url || '#' %>" class="footer-nav__link"><%= page.name %></a>
+              </li>
+            <% } %>
+          </ul>
+        </nav>
+        <nav class="footer-nav">
+          <h3 class="footer-nav__title">Об организации</h3>
+          <ul class="footer-nav__list">
+            <% for (const page of pageList2) { %>
+              <li class="footer-nav__item">
+                <a href="<%= page.url || '#' %>" class="footer-nav__link"><%= page.name %></a>
+              </li>
+            <% } %>
+          </ul>
+        </nav>
+        <nav class="footer-nav">
+          <h3 class="footer-nav__title">Полезное</h3>
+          <ul class="footer-nav__list">
+            <% for (const page of pageList3) { %>
+              <li class="footer-nav__item">
+                <a href="<%= page.url || '#' %>" class="footer-nav__link"><%= page.name %></a>
+              </li>
+            <% } %>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__contacts">
+        <div class="footer-contact">
+          <div class="footer-contact__icon">
+            <i class="icon icon-phone"></i>
+          </div>
+          <a href="#" class="footer-contact__link">8 (800) 655-89-65</a>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-contact__icon">
+            <i class="icon icon-mail"></i>
+          </div>
+          <a href="#" class="footer-contact__link">support@site.com</a>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-contact__icon">
+            <i class="icon icon-point"></i>
+          </div>
+          <div class="footer-contact__link">
+            г. Ташкент,<br> <span class="nowrap">ул. Некрасова 5, оф. 33</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

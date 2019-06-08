@@ -1,0 +1,1417 @@
+.section {
+  padding-top: 48px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  @include media-breakpoint-up(md) {
+    text-align: left;
+  }
+  @include media-breakpoint-up(xl) {
+    padding-top: 86px;
+  }
+}
+
+.landing-hero {
+  padding-top: 82px;
+  @include media-breakpoint-up(md) {
+    padding-top: 155px;
+  }
+  @include media-breakpoint-up(xl) {
+    padding-top: 168px;
+  }
+
+  &_main {
+    .s-hero {
+      background-image: url("../img/s-hero-bg-mobile.jpg");
+      box-shadow: 0 2px 38px 0 rgba(17, 17, 17, 0.05);
+
+      @include media-breakpoint-up(md) {
+        height: 668px;
+        //padding-top: 177px;
+        background-image: url("../img/s-hero-bg.png");
+      }
+    }
+
+    .play-video {
+      bottom: 280px;
+      left: calc(50% + 30px);
+      @include media-breakpoint-up(md) {
+        bottom: 100px;
+        left: 50%;
+      }
+    }
+
+    .s-benefits {
+      padding-top: 24px;
+      padding-bottom: 24px;
+      @include media-breakpoint-up(xl) {
+        height: 242px;
+        //padding-top: 60px;
+        //padding-bottom: 60px;
+      }
+    }
+  }
+
+  &_special-tech {
+    padding-bottom: 83px;
+    //background-size: auto 100%;
+    background: url("../img/special-tech/hero-bg.jpg") center top no-repeat;
+    @include media-breakpoint-up(xl) {
+
+    }
+
+    .s-hero {
+      height: 696px;
+      padding-bottom: 164px;
+
+      &__play-video {
+        top: 122px;
+        left: calc(50% + 137px);
+      }
+    }
+
+    .play-video {
+      top: 122px;
+      left: calc(50% + 137px);
+    }
+
+    .s-benefits {
+      margin-top: 56px;
+    }
+  }
+
+  &_zalog-auto {
+    padding-bottom: 83px;
+    //background-size: auto 100%;
+    background: url("../img/zalog-auto/hero-bg.jpg") center top no-repeat;
+    @include media-breakpoint-up(xl) {
+
+    }
+
+    .s-hero {
+      height: 696px;
+      padding-bottom: 164px;
+    }
+
+    .play-video {
+      top: 87px;
+      left: calc(50% + 126px);
+    }
+
+    .s-benefits {
+      margin-top: 56px;
+    }
+  }
+
+  &_property {
+    padding-bottom: 83px;
+    //background-size: auto 100%;
+    background: url("../img/property/hero-bg.jpg") center top no-repeat;
+    @include media-breakpoint-up(xl) {
+
+    }
+
+    .s-hero {
+      height: 696px;
+      padding-bottom: 164px;
+
+      &__play-video {
+        top: 122px;
+        left: calc(50% + 137px);
+      }
+    }
+
+    .play-video {
+      bottom: 236px;
+      left: calc(50% - 90px);
+    }
+
+    .s-benefits {
+      margin-top: 56px;
+    }
+  }
+
+  // -------------------------
+
+  &_zalog-pts {
+    padding-bottom: 83px;
+    //background-size: auto 100%;
+    background: url("../img/zalog-pts/hero-bg.jpg") center top no-repeat;
+    @include media-breakpoint-up(xl) {
+
+    }
+
+    .s-hero {
+      height: 626px;
+      padding-bottom: 93px;
+    }
+
+    .play-video {
+      top: 300px;
+      left: calc(50% - 44px);
+    }
+
+    .s-benefits {
+      margin-top: 56px;
+    }
+  }
+
+  &_avtolombard {
+    padding-bottom: 83px;
+    //background-size: auto 100%;
+    background: url("../img/avtolombard/hero-bg.jpg") center top no-repeat;
+    @include media-breakpoint-up(xl) {
+
+    }
+
+    .s-hero {
+      height: 532px;
+      margin-bottom: 70px;
+    }
+
+    .play-video {
+      top: 304px;
+      left: calc(50% - 64px);
+    }
+
+    .s-benefits {
+      margin-top: 56px;
+    }
+  }
+
+  &_bad-history {
+    padding-bottom: 83px;
+    .s-hero {
+      background-image: url("../img/s-hero-bg-mobile.jpg");
+
+      @include media-breakpoint-up(md) {
+        height: 678px;
+        //padding-top: 177px;
+        background-image: url("../img/bad-history/hero-bg.jpg");
+        margin-bottom: 52px;
+      }
+    }
+
+    .play-video {
+      bottom: 70px;
+      left: calc(50% - 30px);
+    }
+
+    .s-benefits {
+      margin-top: 52px;
+    }
+
+  }
+}
+
+.s-hero {
+  position: relative;
+  padding-top: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    text-align: left;
+  }
+  @include media-breakpoint-up(xl) {
+  }
+
+  &__title {
+    font-size: 40px;
+    line-height: 45px;
+    @include media-breakpoint-up(xl) {
+      //max-width: 50%;
+      max-width: 60%;
+      margin-bottom: 10px;
+      font-size: 60px;
+      line-height: 70px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 32px;
+    color: #979797;
+    font-size: 18px;
+    line-height: 1.5;
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 37px;
+    }
+  }
+
+  &__man {
+    //height: 636px;
+    bottom: 0;
+    width: 256px;
+    margin: 68px 0 0;
+    background-image: url("../img/s-hero-man.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: drop-shadow(-30px 0 30px rgba(#000, 0.05));
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: percentage(636/377);
+    }
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      left: calc(50% + 130px);
+      width: 377px;
+      margin: 0;
+    }
+  }
+}
+
+.play-video {
+  position: absolute;
+  //bottom: 280px;
+  //left: calc(50% + 30px);
+  text-align: left;
+
+  &_inline {
+    display: flex;
+    align-items: center;
+    .play-video__button {
+      margin-bottom: 0;
+      margin-right: 25px;
+      margin-left: 0;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 61px;
+    height: 61px;
+    margin-bottom: 37px;
+    margin-left: 20px;
+    border-radius: 50%;
+    background-color: $main-color;
+    background-image: $btn-bg-img;
+    background-position: right;
+    background-size: cover;
+    box-shadow: (
+      $btn-shadow-inner,
+      inset 0 -1px 0 0 rgba(#fff, 0.4),
+      0 3px 0 0 #498c29,
+    );
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    text-shadow: $btn-shadow-text;
+
+  }
+
+  &__text {
+    color: #979797;
+    font-size: 14px;
+
+    b {
+      color: #1e1e1e;
+      font-weight: 500;
+    }
+  }
+}
+
+.s-benefits {
+  display: flex;
+  padding: 0;
+  @include media-breakpoint-up(xl) {
+    align-items: center;
+    //padding: 60px 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 290px;
+    margin: 0 auto;
+    padding: 0 0 0 30px;
+    list-style: none;
+    text-align: left;
+    @include media-breakpoint-up(xl) {
+      max-width: none;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    flex: 0 0 100%;
+    margin: 23px 0;
+    padding-left: 86px;
+    @include media-breakpoint-up(xl) {
+      flex: 0 0 auto;
+      margin: 0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &__title {
+    font-size: 25px;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 30px;
+    }
+  }
+}
+
+
+/**
+ * Калькулятор займа
+ */
+.s-calc {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 0;
+  //padding-top: 50px;
+  overflow: hidden;
+  //padding-bottom: 405px;
+  background: $main-gradient;
+
+  //padding-top: 78px;
+  //padding-bottom: 100px;
+  background: url("../img/artmoney/calculator-bg.jpg");
+  background-size: auto 100%;
+  //background-size: ;
+  //
+  //@include media-breakpoint-up(md) {
+  //  padding-top: 77px;
+  //  padding-bottom: 141px;
+  //}
+
+  @include media-breakpoint-up(xl) {
+    //padding-top: 87px;
+    padding-bottom: 105px;
+  }
+
+  &__man {
+    bottom: 0;
+    width: 294px;
+    margin: 22px auto -65px;
+    background: url("../img/s-calc-man.png") no-repeat;
+    background-size: contain;
+    pointer-events: none;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: percentage(672/454);
+    }
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      left: calc(50% - 652px);
+      width: 454px;
+      margin: 0;
+    }
+  }
+
+  &__card {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    //height: 607px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include media-breakpoint-up(md) {
+      max-width: 100%;
+      //height: 556px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: 832px;
+      //height: 511px;
+      margin-right: 0;
+    }
+  }
+}
+
+.calculator-card {
+  @include card;
+  width: 100%;
+  //height: 100%;
+  height: 700px;
+  padding: 37px 19px;
+  line-height: 1;
+
+  text-align: left;
+
+  @include media-breakpoint-up(md) {
+    height: auto;
+    padding: 53px 0 66px;
+  }
+  @include media-breakpoint-up(xl) {
+    padding: 51px 60px 67px 86px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    color: $main-color;
+    //font-size: 30px;
+    //line-height: 1.17;
+    text-align: center;
+
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 38px;
+      //font-size: 36px;
+      text-align: left;
+    }
+  }
+
+  &__row {
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: space-between;
+      justify-content: space-between;
+      height: 310px;
+    }
+  }
+
+  &__col {
+    &_right {
+      margin-top: 40px;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-direction: column;
+      order: 0;
+      width: 275px;
+      &_right {
+        order: 3;
+        width: 340px;
+        height: 100%;
+        //margin-left: 73px;
+        margin-top: 0;
+      }
+    }
+
+  }
+
+  &__form-group {
+    //display: flex;
+    //flex-wrap: wrap;
+    //align-items: center;
+
+    ~ .calculator-card__form-group {
+      margin-top: 28px;
+    }
+
+    @include media-breakpoint-up(md) {
+      ~ .calculator-card__form-group {
+        margin-top: 53px;
+      }
+    }
+  }
+
+  &__field {
+    margin-bottom: 1rem;
+
+    &:last-of-type {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__range-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__legend {
+    display: block;
+    margin-bottom: 19px;
+    //line-height: 1;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 20px;
+      //font-size: 18px;
+      text-align: left;
+    }
+  }
+
+  &__label {
+    font-size: 18px;
+    //line-height: 1;
+    @include media-breakpoint-up(md) {
+      font-weight: 500;
+      //  //margin-bottom: 18px;
+      //  font-size: 18px;
+    }
+  }
+
+  &__range {
+    margin-top: 22px;
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+    }
+  }
+
+  &__val {
+    margin-left: auto;
+    color: $main-color;
+    font-size: 14px;
+    font-weight: 500;
+    //line-height: 18px;
+    white-space: nowrap;
+    //text-align: right;
+    @include media-breakpoint-up(md) {
+      margin-left: 18px;
+      font-size: 18px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    height: 77px;
+    @include media-breakpoint-up(md) {
+      margin-top: auto;
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+
+  //&__total {
+  //  display: flex;
+  //  align-items: center;
+  //}
+
+  &__total-text {
+    color: #7d7d7d;
+    font-size: 14px;
+    line-height: 18px;
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
+
+  &__total-value {
+    margin-left: auto;
+    color: $main-color;
+    font-family: $font-family-adelle;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -0.8px;
+    line-height: 1;
+    white-space: nowrap;
+    @include media-breakpoint-up(md) {
+      margin-left: 20px;
+      font-size: 40px;
+    }
+  }
+}
+
+
+/**
+ * Схема оформления займа
+ */
+.s-scheme {
+  padding-bottom: 25px;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 66px;
+  }
+
+  &__list {
+    margin-top: 25px;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    @include media-breakpoint-up(md) {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 48px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 18px;
+    @include media-breakpoint-up(md) {
+      width: 220px;
+
+      &:nth-child(1) {
+        width: 205px;
+        padding: 0 10px;
+      }
+
+      &:nth-child(2) {
+        width: 210px;
+      }
+    }
+  }
+
+  &__image {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 180px;
+      img {
+        max-width: none;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 14px;
+    color: #1e1e1e;
+    font-size: 18px;
+    line-height: 24px;
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+    }
+  }
+}
+
+.s-scheme-pts {
+  padding-bottom: 25px;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 70px;
+  }
+
+  &__subtitle {
+    color: #797979;
+    @include media-breakpoint-up(md) {
+      font-size: 18px;
+    }
+  }
+
+  &__list {
+    margin-top: 25px;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    @include media-breakpoint-up(md) {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 84px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 18px;
+    @include media-breakpoint-up(md) {
+      width: 245px;
+    }
+  }
+
+  &__image {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 180px;
+      img {
+        max-width: none;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 14px;
+    color: #1e1e1e;
+    font-size: 18px;
+    line-height: 24px;
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+    }
+  }
+}
+
+
+/**
+ * Преимущества кредитования у нас
+ */
+.s-advantages {
+  height: 765px;
+  background: url("../img/s-advantages-bg.jpg") center no-repeat;
+
+  background-size: auto 100%;
+
+  @include media-breakpoint-up(xl) {
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 68px;
+  }
+
+  &__title {
+    //max-width: 500px;
+    margin-bottom: 45px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 730px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+  }
+
+  &__item {
+    display: flex;
+    flex: 0 0 100%;
+    align-items: center;
+    margin-bottom: 58px;
+    color: #8c8c8c;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.28;
+    @include media-breakpoint-up(md) {
+      flex: 0 0 50%;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 61px;
+    height: 61px;
+    margin-right: 13px;
+    border-radius: 50%;
+    background-color: $main-color;
+    background-image: $btn-bg-img;
+    background-position: right;
+    background-size: cover;
+    box-shadow: (
+      $btn-shadow-inner,
+      inset 0 -1px 0 0 rgba(#fff, 0.4),
+      0 3px 0 0 #498c29,
+    );
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: $btn-shadow-text;
+    //background-color: rgb(117, 192, 70);
+    //box-shadow: 0px 3px 0px 0px rgba(67, 136, 34, 0.004), inset 0px -12px 29px 0px rgba(0, 0, 0, 0.83);
+  }
+}
+
+
+/**
+ * Условия кредитования у нас
+ */
+.s-conditions {
+  height: 765px;
+  background: url("../img/s-advantages-bg.jpg") center no-repeat;
+
+  background-size: auto 100%;
+
+  @include media-breakpoint-up(xl) {
+    height: 548px;
+    padding-top: 85px;
+    //padding-bottom: 68px;
+  }
+
+  &__title {
+    //max-width: 500px;
+    margin-bottom: 46px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 470px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+  }
+
+  &__item {
+    position: relative;
+    //margin-bottom: 58px;
+    margin-bottom: 34px;
+    padding-left: 48px;
+    color: #8c8c8c;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.28;
+
+    @include iconfont('check');
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 27px;
+      height: 27px;
+      padding-top: 8px;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background-image: linear-gradient(-90deg, $main-color 0%, rgb(124, 228, 89) 100%);
+      box-shadow: 0 6px 11px 0 rgba(122, 218, 83, 0.42);
+      color: #fff;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    @include media-breakpoint-up(md) {
+
+    }
+  }
+}
+
+
+/**
+ * Отзывы наших клиентов
+ */
+.s-reviews {
+  height: 675px;
+
+  padding-bottom: 69px;
+  //background: url("../img/artmoney/about-bg.jpg") center no-repeat;
+  //background-size: auto 100%;
+
+  @include media-breakpoint-up(xl) {
+    height: 857px;
+    padding-bottom: 110px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__slider {
+    //height: 650px;
+    padding: 60px 0;
+  }
+
+  &__item {
+    @include card();
+    width: 400px;
+    margin: 0;
+    padding: 50px 54px 40px;
+    transition-property: all;
+    opacity: 0;
+
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &.swiper-slide-prev,
+    &.swiper-slide-next {
+      opacity: .5;
+    }
+
+    &.swiper-slide-active {
+      opacity: 1;
+      box-shadow: 0 0 30px 10px rgba(151, 151, 151, 0.2);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    //width: 294px;
+    //height: 192px;
+    margin-bottom: 48px;
+    border-radius: 5px;
+    background-color: #eee;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: percentage(192/294);
+    }
+  }
+
+  &__quote {
+    position: relative;
+    color: #aeaeae;
+    font-size: 16px;
+    line-height: 1.38;
+    text-align: left;
+
+    &::before {
+      content: ',,';
+      position: absolute;
+      top: -60px;
+      left: 0;
+      color: $main-color;
+      font-size: 50px;
+      font-weight: 500;
+      letter-spacing: -7px;
+      line-height: 1;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+  &__name {
+    color: #1e1e1e;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: right;
+  }
+}
+
+
+/**
+ * Какие займы мы выдали
+ */
+.s-cases {
+  padding-bottom: 41px;
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 79px;
+  }
+
+  &__title {
+    margin-bottom: 27px;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 62px;
+    }
+  }
+
+  &__list {
+  }
+
+  &__col {
+  }
+
+}
+
+.case-list {
+  &__wrapper {
+    display: flex;
+    margin-right: -29px;
+    margin-left: -29px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__col {
+    flex: 0 0 50%;
+    padding-right: 29px;
+    padding-left: 29px;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+    @include media-breakpoint-up(md) {
+      margin-top: 39px;
+    }
+  }
+}
+
+.case {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 327px;
+  padding: 20px;
+  overflow: hidden;
+  border-radius: 5px;
+  color: #fff;
+  text-align: left;
+
+  ~ .case {
+    margin-top: 25px;
+  }
+
+  &::before {
+    content: '';
+    //padding-top: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .2));
+    pointer-events: none
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 3;
+    top: 6px;
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+    transition: opacity .3s ease;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+
+  @include media-breakpoint-up(xl) {
+    padding: 37px;
+    ~ .case {
+      margin-top: 49px;
+    }
+    &:hover {
+      &::after {
+        opacity: 0.34;
+      }
+
+      .case__button {
+        opacity: 1;
+      }
+
+      .case__content {
+        transform: none;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    //position: relative;
+    z-index: 4;
+
+    @include media-breakpoint-up(xl) {
+      transform: translateY(90px);
+      transition: all .3s ease;
+    }
+  }
+
+  &__title {
+    //position: relative;
+    //left: 19px;
+    transition: all .3s ease;
+    font-family: $font-family-serif;
+    //font-size: 20px;
+    font-size: 25px;
+    font-weight: 600;
+
+    line-height: 1.2;
+  }
+
+  &__text {
+    //position: relative;
+    margin-bottom: 18px;
+    transition: all .3s ease;
+    font-size: 16px;
+  }
+
+  &__button {
+    display: block;
+    width: 277px;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    transition: all .3s ease;
+    border-radius: 5px;
+    background-image: linear-gradient(57deg, #75c045, #7ce459);
+    color: #fefefe;
+    font-family: $font-family-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    text-shadow: 0px -1px 0 #53a62d;
+
+    &:hover {
+      color: #fefefe;
+      text-decoration: none;
+    }
+
+    //&::before {
+    //  content: "";
+    //  position: absolute;
+    //  z-index: 1;
+    //  top: 0;
+    //  right: 0;
+    //  bottom: 0;
+    //  left: 0;
+    //  background-color: rgba(0, 0, 0, 0);
+    //  pointer-events: auto;
+    //}
+
+    @include media-breakpoint-up(xl) {
+      opacity: 0;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    &.active {
+      .pagination__link {
+        color: $main-color;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    padding: 5px 8px;
+    color: #afafaf;
+    font-size: 14px;
+  }
+}
+
+
+/**
+ * Оставьте заявку и получите займ уже сегодня!
+ */
+.s-request {
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
+  padding-bottom: 342px;
+  background: url('../img/artmoney/office.jpg') center no-repeat;
+  background-size: cover;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 176px);
+    width: 376px;
+    height: 323px;
+    background: url('../img/artmoney/woman.png') no-repeat;
+    background-size: contain;
+    pointer-events: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: 66px;
+    padding-bottom: 80px;
+
+    &::after {
+      left: calc(50% - #{1920 / 2 - 398px});
+      width: 746px;
+      height: 641px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-top: 56px;
+    padding-bottom: 63px;
+  }
+
+  &__form {
+    @include card;
+
+    width: 100%;
+    max-width: 320px;
+    margin-right: auto;
+    margin-left: auto;
+    //background: red url("../img/rm/questions-form.png") center top no-repeat;
+    padding: 41px 20px 50px;
+
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      max-width: 429px;
+      margin-right: 0;
+      padding: 52px 50px 57px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 33px;
+      line-height: 50px;
+    }
+  }
+
+  &__link {
+    margin-bottom: 29px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__fieldlist {
+    width: 275px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+
+
+.s-info {
+  padding-bottom: 40px;
+  @include media-breakpoint-up(md) {
+    padding-bottom: 93px;
+  }
+
+  p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  ul {
+    margin-bottom: 8px;
+    padding-left: 13px;
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    margin-bottom: 8px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -13px;
+      width: 4px;
+      height: 4px;
+      margin-top: -2px;
+      border-radius: 50%;
+      background-color: $main-color;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 26px;
+      font-size: 40px;
+    }
+  }
+
+  &__text {
+    max-width: 850px;
+    margin-right: auto;
+    margin-bottom: 39px;
+    margin-left: auto;
+    color: #aeaeae;
+    text-align: center;
+  }
+}
+
+.accordion {
+  text-align: left;
+
+  &__item {
+    border: solid 1px #e8e8e8;
+    border-bottom: 0;
+
+    &:first-child {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid #e8e8e8;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -18px;
+      width: 6px;
+      height: 11px;
+      margin-top: -7px;
+      transform: rotate(90deg);
+      transition: all .3s ease;
+      //background-color: #75c046;
+      background: url("../img/accordion-icon.svg") center no-repeat;
+      background-size: contain;
+    }
+
+    &.collapsed {
+      &::before {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  &__header {
+    padding: 25px 30px;
+    @include media-breakpoint-up(md) {
+      padding: 36px 60px;
+    }
+  }
+
+  &__body {
+    padding: 0 20px 25px 30px;
+    @include media-breakpoint-up(md) {
+      padding: 0 125px 40px 60px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<ol class="breadcrumb">
+  <% for (var i = 0; i < breadcrumb.length; i += 1) { %>
+    <% if (i < breadcrumb.length - 1) { %>
+      <li class="breadcrumb__item">
+        <a href="#"><%= breadcrumb[i] %></a>
+      </li>
+    <% } else { %>
+      <li class="breadcrumb__item active" aria-current="page"><%= breadcrumb[i] %></li>
+    <% } %>
+  <% } %>
+</ol>

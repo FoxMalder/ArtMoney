@@ -1,0 +1,142 @@
+@import 'fonts/stem';
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic Extrabold Italic'), local('AdelleCyrillic-ExtraboldItalic'),
+  url('../fonts/AdelleCyrillic-ExtraboldItalic.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-ExtraboldItalic.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-ExtraboldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic Heavy'), local('AdelleCyrillic-Heavy'),
+  url('../fonts/AdelleCyrillic-Heavy.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-Heavy.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic Extrabold'), local('AdelleCyrillic-Extrabold'),
+  url('../fonts/AdelleCyrillic-Extrabold.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-Extrabold.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic Italic'), local('AdelleCyrillic-Italic'),
+  url('../fonts/AdelleCyrillic-Italic.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-Italic.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic Thin Italic'), local('AdelleCyrillic-ThinItalic'),
+  url('../fonts/AdelleCyrillic-ThinItalic.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-ThinItalic.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic Light Italic'), local('AdelleCyrillic-LightItalic'),
+  url('../fonts/AdelleCyrillic-LightItalic.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-LightItalic.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic Bold Italic'), local('AdelleCyrillic-BoldItalic'),
+  url('../fonts/AdelleCyrillic-BoldItalic.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-BoldItalic.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic SemiBold Italic'), local('AdelleCyrillic-SemiBoldItalic'),
+  url('../fonts/AdelleCyrillic-SemiBoldItalic.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-SemiBoldItalic.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic Thin'), local('AdelleCyrillic-Thin'),
+  url('../fonts/AdelleCyrillic-Thin.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-Thin.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic Light'), local('AdelleCyrillic-Light'),
+  url('../fonts/AdelleCyrillic-Light.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-Light.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic Heavy Italic'), local('AdelleCyrillic-HeavyItalic'),
+  url('../fonts/AdelleCyrillic-HeavyItalic.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-HeavyItalic.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-HeavyItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic'), local('AdelleCyrillic'),
+  url('../fonts/AdelleCyrillic.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic.woff') format('woff'),
+  url('../fonts/AdelleCyrillic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic SemiBold'), local('AdelleCyrillic-SemiBold'),
+  url('../fonts/AdelleCyrillic-SemiBold.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-SemiBold.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adelle Cyrillic';
+  src: local('Adelle Cyrillic Bold'), local('AdelleCyrillic-Bold'),
+  url('../fonts/AdelleCyrillic-Bold.woff2') format('woff2'),
+  url('../fonts/AdelleCyrillic-Bold.woff') format('woff'),
+  url('../fonts/AdelleCyrillic-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+

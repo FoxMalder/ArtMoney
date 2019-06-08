@@ -1,0 +1,115 @@
+.footer {
+  //height: 420px;
+  position: relative;
+  z-index: 1;
+  //padding-bottom: 30px;
+
+  //overflow: hidden;
+  background: #1e1e1e url("../img/footer-bg.jpg") center no-repeat;
+  background-size: cover;
+  color: #727272;
+  font-size: 16px;
+  font-weight: normal;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+  }
+
+  &__inner {
+    @include media-breakpoint-up(md) {
+      display: flex;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @include media-breakpoint-up(md) {
+      flex: 0 0 50%;
+      padding-top: 66px;
+      padding-bottom: 0;
+    }
+  }
+
+  //&__map-container {
+  //  padding-left: 38px;
+  //  padding-bottom: 29px;
+  //}
+
+  &__row {
+
+    padding: 10px 0;
+    //padding: 12px 0;
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 22px 0;
+    }
+  }
+
+  &__col {
+    > .icon {
+      margin-right: 10px;
+      color: $main-color;
+    }
+
+    @include media-breakpoint-up(md) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    width: 140px;
+    height: 56px;
+
+    > img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__tel {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+
+    > .icon {
+      margin-right: 10px;
+      color: $main-color;
+      font-size: 14px;
+    }
+  }
+
+  &__map {
+    position: relative;
+    height: 416px;
+    margin-right: -$grid-gutter-width / 2;
+    margin-left: -$grid-gutter-width / 2;
+    background-color: #fff;
+
+    > * {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 545px;
+      margin: -26px 0 29px 38px;
+      @include card(true);
+    }
+  }
+}

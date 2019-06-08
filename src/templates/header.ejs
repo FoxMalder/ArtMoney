@@ -1,0 +1,49 @@
+<%
+if (typeof bg === 'undefined') {
+  bg = true
+}
+%>
+
+<header class="<%= bg ? 'header' : 'header header_no-bg' %>">
+  <div class="container">
+    <div class="header__inner">
+      <button class="menu-button">
+        <span></span>
+      </button>
+      
+      <a class="header__logo" href="/" title="На главную">
+        <img alt="ArtMoney" src="./../img/artmoney/logo-black.png">
+      </a>
+      
+      <ul class="navbar-nav">
+        <li class="navbar-nav__item">
+          <a href="#" class="navbar-nav__link">Главная</a>
+        </li>
+        <li class="navbar-nav__item">
+          <a href="#" class="navbar-nav__link navbar-nav__link_dropdown active">Займы</a>
+        </li>
+        <li class="navbar-nav__item">
+          <a href="#" class="navbar-nav__link navbar-nav__link_dropdown">О компании</a>
+        </li>
+        <li class="navbar-nav__item">
+          <a href="#" class="navbar-nav__link">Вопросы и ответы</a>
+        </li>
+        <li class="navbar-nav__item">
+          <a href="#" class="navbar-nav__link">Статьи</a>
+        </li>
+        <li class="navbar-nav__item">
+          <a href="#" class="navbar-nav__link">Контакты</a>
+        </li>
+      </ul>
+      
+      <div class="header__contacts">
+        <a class="header__tel" href="tel:23333333">
+          <i class="icon icon-phone"></i>9 999 999999
+        </a>
+        <div class="header__address">
+          г. Ташкент<br> ул. Некрасова 5, оф. 33
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

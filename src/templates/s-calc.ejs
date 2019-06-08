@@ -1,0 +1,66 @@
+<section class="section s-calc">
+  <div class="container">
+    <div class="s-calc__card">
+      <form action="/mail.php" method="post" class="calculator-card card">
+        <h2 class="calculator-card__title"><%= lang == 'ru' ? 'Калькулятор займа' : 'sdgdsfg' %></h2>
+        <div class="calculator-card__row">
+          <div class="calculator-card__col">
+            <label class="calculator-card__legend">Выберите тип займа</label> <select class="custom-select">
+              <option selected>Под залог автомобиля</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          
+          <div class="calculator-card__col calculator-card__col_right">
+            <div class="calculator-card__form-group" id="calc-price">
+              <div class="calculator-card__range-head">
+                <div class="calculator-card__label">Укажите сумму</div>
+                <div class="calculator-card__val">0</div>
+              </div>
+              <div class="calculator-card__range"></div>
+              <input type="hidden" name="price">
+            </div>
+            <div class="calculator-card__form-group" id="calc-term">
+              <div class="calculator-card__range-head">
+                <div class="calculator-card__label">Укажите срок</div>
+                <div class="calculator-card__val">0</div>
+              </div>
+              <div class="calculator-card__range"></div>
+              <input type="hidden" name="term">
+            </div>
+            
+            <div class="calculator-card__bottom">
+              <div class="calculator-card__total-text">
+                Ежемесячный <br>платёж составит:
+              </div>
+              <div class="calculator-card__total-value" id="calc-total">4 167 сўм</div>
+            </div>
+          </div>
+          
+          <div class="calculator-card__col">
+            <p class="calculator-card__field">
+              <label class="input-group input-group_icon">
+                  <span class="input-group__icon">
+                    <i class="icon icon-user"></i>
+                  </span>
+                <input autocomplete="name" class="input-group__input" name="name" placeholder="Введите ФИО" required="" type="text">
+              </label>
+            </p>
+            <p class="calculator-card__field">
+              <label class="input-group input-group_icon">
+                <span class="input-group__icon"><i class="icon icon-phone"></i></span>
+                <input autocomplete="tel" class="input-group__input" name="tel" placeholder="Введите телефон" required="" type="tel">
+              </label>
+            </p>
+            <div class="calculator-card__bottom">
+              <button class="calculator-card__button btn" type="submit">Оформить займ</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <figure class="s-calc__man"></figure>
+  </div>
+</section>

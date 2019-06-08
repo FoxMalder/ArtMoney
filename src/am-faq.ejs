@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="<%= lang || 'ru' %>">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  
+  <title>FAQ | ArtMoney</title>
+</head>
+<body>
+
+<%= require('./templates/header.ejs')() %>
+
+<main class="wrapper">
+  
+  <section class="page-hero">
+    <div class="container">
+      
+      <nav class="page-hero__breadcrumb" aria-label="breadcrumb">
+        <%= require('./templates/c-breadcrumb.ejs')({ breadcrumb: ['Главная', 'Вопросы и ответы'] }) %>
+      </nav>
+      
+      <article class="article">
+        <h1 class="article__title text-center">Ответы на популярные вопросы по получению займов</h1>
+        
+        <div class="accordion" id="faq">
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <h3 class="mb-0">
+                <a class="accordion__title" data-toggle="collapse" data-target="#collapseOne">
+                  Какие документы требуются?
+                </a>
+              </h3>
+            </div>
+            
+            <div id="collapseOne" class="collapse show" data-parent="#faq">
+              <div class="accordion__body">
+                <p>Кредитование под залог — финансовые отношения, при которых займ предоставляется в обмен на какое-то
+                  ценное движимое и недвижимое имущество:</p>
+                <ul>
+                  <li>Жилье;</li>
+                  <li>Автомобиль или спецтранспорт;</li>
+                  <li>Другие ценности, в зависимости от условий кредитора.</li>
+                </ul>
+                <p>Вернее, стороны заключают особый договор, согласно которому оно может перейти кредитору. Если заемщик
+                  успешно погасил задолженность, его имущество возвращается; в противном случае его продают, тем самым
+                  возмещая убыток. Сделка подтверждается официальным документом, имеющим юридическую силу.</p>
+                <p>При этом стоит учитывать, что не все материальные ценности принимаются в качестве залога: например,
+                  ювелирные украшения актуальны далеко не всегда.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <h3 class="mb-0">
+                <a class="accordion__title collapsed" data-toggle="collapse" data-target="#collapseTwo">
+                  Как рассчитывается процент?
+                </a>
+              </h3>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#faq">
+              <div class="accordion__body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
+                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <h3 class="mb-0">
+                <a class="accordion__title collapsed" data-toggle="collapse" data-target="#collapseThree">
+                  Что, если я задержу погашение долга?
+                </a>
+              </h3>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#faq">
+              <div class="accordion__body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
+                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <div class="accordion__header">
+              <h3 class="mb-0">
+                <a class="accordion__title collapsed" data-toggle="collapse" data-target="#faq-4">
+                  Могу ли я пользоваться своим автомобилем при займе под залог авто?
+                </a>
+              </h3>
+            </div>
+            <div id="faq-4" class="collapse" data-parent="#faq">
+              <div class="accordion__body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+                moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
+                aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    
+    </div>
+  </section>
+  
+  <%= require('./templates/s-request.ejs')({
+    phone: phone,
+    title: 'Оставьте заявку и получите займ <span class="selected">уже сегодня!</span>'
+  }) %>
+</main>
+
+<%= require('./templates/footer.ejs')() %>
+
+</body>
+</html>

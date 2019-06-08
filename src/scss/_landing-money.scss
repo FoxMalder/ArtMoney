@@ -1,0 +1,339 @@
+.landing-steps {
+  height: 488px;
+  @include media-breakpoint-up(xl) {
+    height: 298px;
+  }
+
+  &__inner {
+    background: url("../img/artmoney/steps-mobile.png") center 20px no-repeat;
+
+    @include media-breakpoint-up(md) {
+      height: 91px;
+      background-size: contain;
+      background: url("../img/artmoney/steps.png") no-repeat;
+      padding-bottom: 28px;
+      margin-left: -20px;
+    }
+  }
+
+  &__step {
+    max-width: 240px;
+
+    @include media-breakpoint-up(md) {
+      max-width: 215px;
+      margin-left: 70px;
+
+      &:nth-child(2) {
+        max-width: 250px;
+      }
+    }
+  }
+}
+
+.landing-calculator {
+  //padding-top: 78px;
+  //padding-bottom: 100px;
+  background: url("../img/artmoney/calculator-bg.jpg");
+  background-size: auto 100%;
+  //background-size: ;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -79px;
+    right: calc(50% - #{1920 / 2 - 100px});
+    width: 273px;
+    height: 229px;
+    background: url("../img/artmoney/element-decor-0.png") no-repeat;
+    background-size: contain;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    bottom: -85px;
+    left: calc(50% - #{228px / 2});
+    width: 228px;
+    height: 464px;
+    background: url('../img/artmoney/woman-0.png') no-repeat;
+    background-size: contain;
+    pointer-events: none
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: 77px;
+    padding-bottom: 141px;
+    &::before {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-top: 78px;
+    padding-bottom: 100px;
+
+    &::before {
+      display: block;
+      bottom: 0;
+      left: calc(50% - #{1920 / 2 - 400px});
+      width: 350px;
+      height: 712px;
+    }
+  }
+
+  &__card {
+    //height: 477px;
+    //width: 100%;
+
+    @include media-breakpoint-up(xl) {
+      height: 477px;
+      max-width: 891px;
+      margin-right: 56px;
+      padding-left: 185px;
+    }
+  }
+}
+
+.calculator-card {
+  //background: url("../img/artmoney/rm/calc.png") left top no-repeat;
+
+  &__title {
+    margin-bottom: 46px;
+  }
+
+  &__form-group {
+    & ~ & {
+      margin-top: 42px;
+    }
+  }
+
+  &__label {
+    //width: 143px;
+    //margin-bottom: 0;
+    @include media-breakpoint-up(md) {
+      flex: 0 0 140px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__val {
+  }
+
+  &__range {
+    //max-width: 367px;
+    @include media-breakpoint-up(md) {
+      flex: 0 0 367px;
+    }
+  }
+
+  &__total {
+    @include media-breakpoint-up(md) {
+      margin-top: 46px;
+    }
+  }
+
+  &__bottom {
+    margin-top: 25px;
+  }
+}
+
+.landing-about {
+  z-index: 1;
+  padding-top: 57px;
+  background: url("../img/artmoney/about-bg.jpg") center no-repeat;
+  background-size: auto 100%;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 173px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -65px;
+    left: calc(50% - #{360 / 2 + 10px});
+    width: 130px;
+    height: 129px;
+    background: url('../img/artmoney/element-decor-1.png') no-repeat;
+    background-size: contain;
+
+    @include media-breakpoint-up(md) {
+      top: -88px;
+      left: calc(50% - #{1920 / 2 - 191px});
+      width: 340px;
+      height: 260px;
+    }
+  }
+}
+
+.section-question {
+  padding-top: 0;
+  padding-bottom: (372px - 49px);
+  background: url('../img/artmoney/office.jpg') center no-repeat;
+  background-size: cover;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -88px;
+    left: calc(50% - #{1920 / 2 - 103px});
+    width: 210px;
+    height: 246px;
+    background: url("../img/artmoney/element-decor-3.png") no-repeat;
+    background-size: contain;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 176px);
+    width: 376px;
+    height: 323px;
+    background: url('../img/artmoney/woman.png') no-repeat;
+    background-size: contain;
+  }
+
+
+  @include media-breakpoint-up(md) {
+    padding-top: 66px;
+    padding-bottom: 80px;
+
+    &::after {
+      left: calc(50% - #{1920 / 2 - 375px});
+      width: 746px;
+      height: 641px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-top: 65px;
+    padding-bottom: 71px;
+  }
+
+  //&__inner {
+  //  padding-right: 19px;
+  //}
+
+  &__form {
+    top: -49px;
+    @include media-breakpoint-up(md) {
+      top: 0;
+    }
+  }
+}
+
+.am-landing-give-email {
+  position: relative;
+  z-index: 1;
+  padding-top: 343px;
+  padding-bottom: 159px;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 38px;
+    left: calc(50% - 140px);
+    width: 280px;
+    height: 280px;
+    background: url("../img/artmoney/journal.png") no-repeat;
+    background-size: cover;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -61px;
+    right: calc(50% - #{1920 / 2 - 31px});
+    width: 267px;
+    height: 281px;
+    background: url("../img/artmoney/element-decor-2.png") no-repeat;
+    background-size: contain;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 670px;
+    padding-top: 139px;
+    padding-bottom: 0;
+    background: url('../img/artmoney/give-email-bg.jpg') center bottom no-repeat;
+    &::before {
+      top: 74px;
+      left: calc(50% - #{1920 / 2 - 469px});
+      width: 524px;
+      height: 528px;
+    }
+    &::after {
+      top: -61px;
+      right: calc(50% - #{1920 / 2 - 31px});
+      width: 267px;
+      height: 281px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include media-breakpoint-up(md) {
+      padding-left: 623px;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    margin-bottom: 44px;
+    font-size: 25px;
+    line-height: 1.2;
+    text-align: center;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 50px;
+      font-size: 36px;
+      line-height: 1.25;
+      text-align: left;
+    }
+  }
+
+  &__quote {
+    margin-bottom: 47px;
+    color: #767676;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 22px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 50px;
+      font-size: 18px;
+      line-height: 1.39;
+    }
+  }
+}
+
+.section-slogan {
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: calc(50% - #{1920 / 2 - 1161px});
+    width: 297px;
+    height: 297px;
+    border-radius: 50%;
+    background: $main-gradient;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: 238px;
+    &::after {
+      content: '';
+      position: absolute;
+      //top: calc(50% - 80px);
+      top: 70px;
+      left: calc(50% - #{1920 / 2 - 861px});
+      width: 585px;
+      height: 480px;
+      background: url("../img/artmoney/safe.png") no-repeat;
+      background-size: contain;
+    }
+  }
+}

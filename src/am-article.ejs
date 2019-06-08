@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="<%= lang || 'ru' %>">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  
+  <title>Статья | ArtMoney</title>
+</head>
+<body>
+
+<%= require('./templates/header.ejs')() %>
+
+<main class="wrapper">
+  
+  <section class="page-hero">
+    <div class="container">
+      
+      <nav class="page-hero__breadcrumb" aria-label="breadcrumb">
+        <%= require('./templates/c-breadcrumb.ejs')({ breadcrumb: ['Главная', 'Статьи', 'Перечень документов для оформления займа'] }) %>
+      </nav>
+      
+      <article class="article">
+        <h1 class="page-hero__title"><i class="selected">Перечерень документов</i> для оформления займа</h1>
+        <figure class="article__banner">
+          <img src="img/article-banner.jpg" alt="">
+        </figure>
+        <p>Линеарная фактура, как бы это ни казалось парадоксальным, изящно перечеркивает случайный надир. Эффект
+          "вау-вау" дает реликтовый ледник. Процессуальное изменение, после осторожного анализа, представляет собой
+          метеорный дождь.</p>
+        <p>Экскадрилья mezzo forte заканчивает гармонический интервал. Арпеджио вызывает миксолидийский Южный
+          Треугольник. Зенит гасит лирический сет, Плутон не входит в эту классификацию.</p>
+        <p>Тукан иллюстрирует далекий рок-н-ролл 50-х, тем не менее, Дон Еманс включил в список всего 82-е Великие
+          Кометы. Эфемерида выбирает однокомпонентный полиряд. Юпитер вызывает эллиптический доминантсептаккорд.</p>
+      </article>
+    
+    </div>
+  </section>
+  
+  <%= require('./templates/s-request.ejs')({
+    phone: phone,
+    title: 'Оставьте заявку и получите займ <span class="selected">уже сегодня!</span>'
+  }) %>
+</main>
+
+<%= require('./templates/footer.ejs')() %>
+
+</body>
+</html>

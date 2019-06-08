@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="<%= lang || 'ru' %>">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  
+  <title>Выданные займы | ArtMoney</title>
+</head>
+<body>
+
+<%= require('./templates/header.ejs')() %>
+
+<main class="wrapper">
+  
+  <section class="page-hero">
+    <div class="container">
+      
+      <nav class="page-hero__breadcrumb" aria-label="breadcrumb">
+        <%= require('./templates/c-breadcrumb.ejs')({ breadcrumb: ['Главная', 'О компании', 'Выданные займы'] }) %>
+      </nav>
+      
+      <article class="article">
+        <h2 class="article__title text-center">Выданные займы для наших клиентов</h2>
+        <div class="case-list">
+          <div class="case-list__wrapper">
+            <div class="case-list__col">
+              <div class="case" style="background-image: url(<%= require('./img/case-1.jpg') %>)">
+                <div class="case__content">
+                  <h3 class="case__title">Коттедж, 210 кв. м</h3>
+                  <div class="case__text">
+                    <div>Рыночная стоимость: 4 млн руб.</div>
+                    <div>Выдано под залог: 502 300 руб.</div>
+                  </div>
+                  <a href="#" class="case__button">Подробнее о займе</a>
+                </div>
+              </div>
+              <div class="case" style="background-image: url(<%= require('./img/case-2.jpg') %>)">
+                <div class="case__content">
+                  <h3 class="case__title">Коттедж, 210 кв. м</h3>
+                  <div class="case__text">
+                    <div>Рыночная стоимость: 4 млн руб.</div>
+                    <div>Выдано под залог: 502 300 руб.</div>
+                  </div>
+                  <a href="#" class="case__button">Подробнее о займе</a>
+                </div>
+              </div>
+            </div>
+            <div class="case-list__col">
+              <div class="case" style="background-image: url(<%= require('./img/case-3.jpg') %>)">
+                <div class="case__content">
+                  <h3 class="case__title">Коттедж, 210 кв. м</h3>
+                  <div class="case__text">
+                    <div>Рыночная стоимость: 4 млн руб.</div>
+                    <div>Выдано под залог: 502 300 руб.</div>
+                  </div>
+                  <a href="#" class="case__button">Подробнее о займе</a>
+                </div>
+              </div>
+              <div class="case" style="background-image: url(<%= require('./img/case-4.jpg') %>)">
+                <div class="case__content">
+                  <h3 class="case__title">Коттедж, 210 кв. м</h3>
+                  <div class="case__text">
+                    <div>Рыночная стоимость: 4 млн руб.</div>
+                    <div>Выдано под залог: 502 300 руб.</div>
+                  </div>
+                  <a href="#" class="case__button">Подробнее о займе</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <nav class="case-list__pagination">
+            <ul class="pagination">
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">1</a>
+              </li>
+              <li class="pagination__item active">
+                <a class="pagination__link" href="#">2</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">3</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">...</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </article>
+    </div>
+  </section>
+  
+  <%= require('./templates/s-request.ejs')({
+    phone: phone,
+    title: 'Оставьте заявку и получите займ <span class="selected">уже сегодня!</span>'
+  }) %>
+</main>
+
+<%= require('./templates/footer.ejs')() %>
+
+</body>
+</html>
