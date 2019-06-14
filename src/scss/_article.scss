@@ -1,14 +1,15 @@
 .page-hero {
-  margin-top: 82px;
+  margin-top: map_get($header-heights, sm);
   padding-top: 10px;
   padding-bottom: 34px;
   @include media-breakpoint-up(md) {
-    margin-top: 155px;
+    margin-top: map_get($header-heights, md);
     padding-top: 20px;
     padding-bottom: 54px;
   }
   @include media-breakpoint-up(xl) {
-    margin-top: 168px;
+    margin-top: map_get($header-heights, xl);
+    //margin-top: 0;
     padding-top: 45px;
     padding-bottom: 64px;
   }

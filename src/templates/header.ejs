@@ -78,7 +78,7 @@ const menuList = [
     viewOnHeader: false,
     subList: [
       {
-        title: 'Статья',
+        title: 'Перечень документов для оформления займа',
         url: 'am-article.html'
       }
     ]
@@ -91,8 +91,18 @@ const menuList = [
 ]
 %>
 
+
 <!--<header class="header header_open-menu header_minimal">-->
 <header class="<%= bg ? 'header' : 'header header_no-bg' %>">
+  <div class="select-language">
+    <div class="container">
+      <div class="select-language__inner">
+        <span>Выбрать язык:</span>
+        <a class="select-language__link active" href="#">RU</a>
+        <a class="select-language__link" href="#">UZ</a>
+      </div>
+    </div>
+  </div>
   <div class="header__nav-top">
     <div class="container header__inner">
       <button class="menu-button">

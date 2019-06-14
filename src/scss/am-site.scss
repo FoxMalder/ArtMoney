@@ -27,6 +27,13 @@ $container-max-widths: (
   xl: 1170px + $grid-gutter-width
 );
 
+$header-heights: (
+  sm: 82px,
+  md: 155px,
+  xl: 167px + 33px
+);
+
+
 
 $link-color:                              $body-color;
 $link-decoration:                         none;

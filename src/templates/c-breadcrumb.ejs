@@ -1,9 +1,92 @@
+<%
+const menuList = [
+  {
+    title: 'Главная',
+    url: 'am-main.html'
+  },
+  {
+    title: 'Займы',
+    url: '#',
+    subList: [
+      {
+        title: 'Под залог недвижимости',
+        url: 'am-property.html'
+      },
+      {
+        title: 'Под залог ПТС',
+        url: 'am-zalog-pts.html'
+      },
+      {
+        title: 'Под залог автомобиля',
+        url: 'am-zalog-auto.html'
+      },
+      {
+        title: 'Автоломбард',
+        url: 'am-avtolombard.html'
+      },
+      {
+        title: 'Под залог спецтехники',
+        url: 'am-special-tech.html'
+      },
+      {
+        title: 'С плохой кредитной историей',
+        url: 'am-bad-history.html'
+      }
+    ]
+  },
+  {
+    title: 'О компании',
+    url: '#',
+    subList: [
+      {
+        title: 'Лицензии',
+        url: '#'
+      },
+      {
+        title: 'Новости',
+        url: '#'
+      },
+      {
+        title: 'Документы',
+        url: '#'
+      },
+      {
+        title: 'Выданные займы',
+        url: 'am-loans-list.html'
+      }
+    ]
+  },
+  {
+    title: 'Вопросы и ответы',
+    url: 'am-faq.html'
+  },
+  {
+    title: 'Статьи',
+    url: '#',
+    subList: [
+      {
+        title: 'Перечень документов для оформления займа',
+        url: 'am-article.html'
+      }
+    ]
+  },
+  {
+    title: 'Контакты',
+    url: '#'
+  }
+]
+%>
+
 <ol class="breadcrumb">
   <% for (var i = 0; i < breadcrumb.length; i += 1) { %>
     <% if (i < breadcrumb.length - 1) { %>
-      <li class="breadcrumb__item">
-        <a href="#"><%= breadcrumb[i] %></a>
-      </li>
+      <% for (let t in menuList) { %>
+        <% if (breadcrumb[i] == menuList[t].title) { %>
+          <li class="breadcrumb__item">
+            <a href="<%= menuList[t].url %>"><%= menuList[t].title %></a>
+          </li>
+        <% } %>
+      <% } %>
     <% } else { %>
       <li class="breadcrumb__item active" aria-current="page"><%= breadcrumb[i] %></li>
     <% } %>

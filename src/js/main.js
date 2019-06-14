@@ -254,6 +254,7 @@ function sendForm(event) {
 }
 
 function headerControl() {
+  console.log(window.scrollY, window.pageYOffset);
   if (window.scrollY > 200) {
     document.querySelector('.header').classList.add('header_minimal');
   } else {

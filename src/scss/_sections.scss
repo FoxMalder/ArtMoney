@@ -13,12 +13,13 @@
 }
 
 .landing-hero {
-  padding-top: 82px;
+  padding-top: map_get($header-heights, sm);
   @include media-breakpoint-up(md) {
-    padding-top: 155px;
+    padding-top: map_get($header-heights, md);
   }
   @include media-breakpoint-up(xl) {
-    padding-top: 168px;
+    padding-top: map_get($header-heights, xl);
+    //padding-top: 0;
   }
 
   &_main {

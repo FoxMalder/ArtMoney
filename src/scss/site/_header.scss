@@ -2,6 +2,7 @@
   display: none;
   padding: 7px 0;
   border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+  background-color: #fff;
   font-size: 12px;
   @include media-breakpoint-up(md) {
     display: block;
@@ -32,30 +33,9 @@
   left: 0;
   transition: all .3s ease;
 
-  height: 82px;
-
-  @include media-breakpoint-up(md) {
-    height: 155px;
-  }
-
-  @include media-breakpoint-up(xl) {
-    height: 167px;
-  }
-
-  &_minimal {
-    height: 82px;
-
-    @include media-breakpoint-up(md) {
-      height: 155px;
-    }
-
-    @include media-breakpoint-up(xl) {
-      height: 110px;
-    }
-  }
-
   @include media-breakpoint-up(xl) {
     &_no-bg {
+      //.select-language,
       .header__nav-top {
         border-bottom-color: transparent;
         background: none;
@@ -66,6 +46,7 @@
       .header__nav-top {
         border-bottom: 1px solid #e8e8e8;
         background-color: #fff;
+        height: 110px;
       }
     }
 
@@ -82,7 +63,17 @@
     transition: all .3s ease;
     border-bottom: 1px solid #e8e8e8;
     background-color: #fff;
-    height: 100%;
+
+    height: map_get($header-heights, sm);
+
+    @include media-breakpoint-up(md) {
+      height: map_get($header-heights, md);
+    }
+
+    @include media-breakpoint-up(xl) {
+      //position: sticky;
+      height: map_get($header-heights, xl) - 33px;
+    }
   }
 
   &__nav-bottom {
