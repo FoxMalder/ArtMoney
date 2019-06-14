@@ -30,29 +30,83 @@
   top: 0;
   right: 0;
   left: 0;
-  border-bottom: 1px solid rgba(151, 151, 151, 0.1);
-  background-color: #fff;
+  transition: all .3s ease;
 
+  height: 82px;
+
+  @include media-breakpoint-up(md) {
+    height: 155px;
+  }
 
   @include media-breakpoint-up(xl) {
-    position: absolute;
+    height: 167px;
+  }
 
+  &_minimal {
+    height: 82px;
+
+    @include media-breakpoint-up(md) {
+      height: 155px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      height: 110px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
     &_no-bg {
-      border-bottom: 0;
-      background: none;
+      .header__nav-top {
+        border-bottom-color: transparent;
+        background: none;
+      }
+    }
+
+    &_minimal {
+      .header__nav-top {
+        border-bottom: 1px solid #e8e8e8;
+        background-color: #fff;
+      }
+    }
+
+    &_open-menu {
+      .header__nav-top {
+        border-bottom: 1px solid #e8e8e8;
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__nav-top {
+    z-index: 2;
+    transition: all .3s ease;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #fff;
+    height: 100%;
+  }
+
+  &__nav-bottom {
+    position: absolute;
+    z-index: -1;
+    top: 100%;
+    right: 0;
+    left: 0;
+    transform: translateY(-100%);
+    transition: all .4s ease;
+    opacity: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 13px 0 rgba(13, 13, 13, 0.03);
+
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 
   &__inner {
     display: flex;
     align-items: center;
-    height: 82px;
-    @include media-breakpoint-up(md) {
-      height: 155px;
-    }
-    @include media-breakpoint-up(xl) {
-      height: 167px;
-    }
+    height: 100%;
   }
 
   &__nav {
@@ -117,12 +171,12 @@
   }
 
   &__tel {
+    display: inline-block;
     margin-bottom: 10px;
     margin-left: -20px;
     color: inherit;
     font-size: 20px;
     font-weight: 500;
-    display: inline-block;
 
     > .icon {
       margin-right: 6px;
@@ -135,6 +189,40 @@
     color: #979797;
     font-size: 16px;
     line-height: 1.25;
+  }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 -15px;
+  }
+
+  &__menu-item {
+    padding: 0 15px;
+  }
+
+  &__menu-link {
+    display: block;
+    font-size: 16px;
+    line-height: 1;
+    height: 72px;
+    position: relative;
+    padding: 28px 0;
+    color: #979797;
+    &.active {
+      color: $main-color;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: 3px;
+        background-image: linear-gradient( -96deg, $main-color 0%, #7CE459 100%);
+      }
+    }
   }
 }
 

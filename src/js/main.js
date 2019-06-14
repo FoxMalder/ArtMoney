@@ -101,6 +101,9 @@ class Menu {
 
 class Calculator {
   constructor() {
+    if (typeof app === 'undefined' || !document.querySelector('.calculator-card')) {
+      return;
+    }
     this.calcElem = document.querySelectorAll('.js-calc-item');
     this.calcTotalEl = document.querySelector('.calculator-card__total-value');
 
@@ -250,29 +253,42 @@ function sendForm(event) {
     });
 }
 
+function headerControl() {
+  if (window.scrollY > 200) {
+    document.querySelector('.header').classList.add('header_minimal');
+  } else {
+    document.querySelector('.header').classList.remove('header_minimal');
+  }
+}
+
 ready(() => {
   new Menu();
   new Calculator();
 
 
-  const mapContainer = document.getElementById('footer-map');
+  headerControl();
+  document.addEventListener('scroll', headerControl);
 
-  if (mapContainer) {
-    YandexMapsLoader.load('https://api-maps.yandex.ru/2.1/?lang=ru_RU').then(Maps => {
-        const map = new Maps.Map(mapContainer, app.mapOptions);
 
-        // const placemark = new Maps.Placemark(map.getCenter(), {}, {
-        //   iconLayout: 'default#image',
-        //   iconImageHref: require('../img/map-point.svg'),
-        //   iconImageSize: [47, 63],
-        //   iconImageOffset: [-23, -65],
-        // });
-        const placemark = new Maps.Placemark(map.getCenter());
+  $('.navbar-nav__link_dropdown').on('click', (event) => {
+    event.preventDefault();
 
-        map.geoObjects.add(placemark);
-      })
-      .catch(error => console.log('Failed to load Yandex Maps', error));
-  }
+    const selector = event.currentTarget.getAttribute('data-src');
+
+    if ($(selector).hasClass('active')) {
+      $(selector).removeClass('active');
+      $(event.currentTarget).removeClass('active');
+      $('.header').removeClass('header_open-menu');
+    } else {
+      $('.header__nav-bottom').removeClass('active');
+      $(selector).addClass('active');
+
+      $('.navbar-nav__link_dropdown').removeClass('active');
+      $(event.currentTarget).addClass('active');
+
+      $('.header').addClass('header_open-menu');
+    }
+  });
 
   // const formList = document.querySelectorAll('form');
   //

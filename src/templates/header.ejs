@@ -2,11 +2,99 @@
 if (typeof bg === 'undefined') {
   bg = true
 }
+
+if (typeof url === 'undefined') {
+  url = ''
+}
+
+const menuList = [
+  {
+    title: 'Главная',
+    url: 'am-main.html',
+    viewOnHeader: true
+  },
+  {
+    title: 'Займы',
+    url: '#',
+    viewOnHeader: true,
+    subList: [
+      {
+        title: 'Под залог недвижимости',
+        url: 'am-property.html'
+      },
+      {
+        title: 'Под залог ПТС',
+        url: 'am-zalog-pts.html'
+      },
+      {
+        title: 'Под залог автомобиля',
+        url: 'am-zalog-auto.html'
+      },
+      {
+        title: 'Автоломбард',
+        url: 'am-avtolombard.html'
+      },
+      {
+        title: 'Под залог спецтехники',
+        url: 'am-special-tech.html'
+      },
+      {
+        title: 'С плохой кредитной историей',
+        url: 'am-bad-history.html'
+      }
+    ]
+  },
+  {
+    title: 'О компании',
+    url: '#',
+    viewOnHeader: true,
+    subList: [
+      {
+        title: 'Лицензии',
+        url: '#'
+      },
+      {
+        title: 'Новости',
+        url: '#'
+      },
+      {
+        title: 'Документы',
+        url: '#'
+      },
+      {
+        title: 'Выданные займы',
+        url: 'am-loans-list.html'
+      }
+    ]
+  },
+  {
+    title: 'Вопросы и ответы',
+    url: 'am-faq.html',
+    viewOnHeader: true
+  },
+  {
+    title: 'Статьи',
+    url: '#',
+    viewOnHeader: false,
+    subList: [
+      {
+        title: 'Статья',
+        url: 'am-article.html'
+      }
+    ]
+  },
+  {
+    title: 'Контакты',
+    url: '#',
+    viewOnHeader: true
+  }
+]
 %>
 
+<!--<header class="header header_open-menu header_minimal">-->
 <header class="<%= bg ? 'header' : 'header header_no-bg' %>">
-  <div class="container">
-    <div class="header__inner">
+  <div class="header__nav-top">
+    <div class="container header__inner">
       <button class="menu-button">
         <span></span>
       </button>
@@ -16,24 +104,15 @@ if (typeof bg === 'undefined') {
       </a>
       
       <ul class="navbar-nav">
-        <li class="navbar-nav__item">
-          <a href="#" class="navbar-nav__link">Главная</a>
-        </li>
-        <li class="navbar-nav__item">
-          <a href="#" class="navbar-nav__link navbar-nav__link_dropdown active">Займы</a>
-        </li>
-        <li class="navbar-nav__item">
-          <a href="#" class="navbar-nav__link navbar-nav__link_dropdown">О компании</a>
-        </li>
-        <li class="navbar-nav__item">
-          <a href="#" class="navbar-nav__link">Вопросы и ответы</a>
-        </li>
-        <li class="navbar-nav__item">
-          <a href="#" class="navbar-nav__link">Статьи</a>
-        </li>
-        <li class="navbar-nav__item">
-          <a href="#" class="navbar-nav__link">Контакты</a>
-        </li>
+        <% for (let i in menuList) { %>
+          <li class="navbar-nav__item">
+            <% if (menuList[i].hasOwnProperty('subList')) { %>
+              <a href="<%= menuList[i].url %>" class="navbar-nav__link navbar-nav__link_dropdown" data-src="#menu-<%= i %>"><%= menuList[i].title %></a>
+            <% } else { %>
+              <a href="<%= menuList[i].url %>" class="navbar-nav__link<%= url == menuList[i].url ? ' active' : '' %>"><%= menuList[i].title %></a>
+            <% } %>
+          </li>
+        <% } %>
       </ul>
       
       <div class="header__contacts">
@@ -46,4 +125,20 @@ if (typeof bg === 'undefined') {
       </div>
     </div>
   </div>
+  
+  <% for (let i in menuList) { %>
+    <% if (menuList[i].hasOwnProperty('subList')) { %>
+      <nav class="header__nav-bottom" id="menu-<%= i %>">
+        <div class="container">
+          <ul class="header__menu <%= menuList[i].subList.length > 5 ? 'justify-content-between' : '' %>">
+            <% for (let n in menuList[i].subList) { %>
+              <li class="header__menu-item">
+                <a href="<%= menuList[i].subList[n].url %>" class="header__menu-link<%= url == menuList[i].subList[n].url ? ' active' : '' %>"><%= menuList[i].subList[n].title %></a>
+              </li>
+            <% } %>
+          </ul>
+        </div>
+      </nav>
+    <% } %>
+  <% } %>
 </header>
