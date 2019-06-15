@@ -1,22 +1,24 @@
 $__iconfont__data: map-merge(if(global_variable_exists('__iconfont__data'), $__iconfont__data, ()), (
 	"iconfont": (
 		"arrow-down": "\ea01",
-		"check": "\ea02",
-		"clock-border": "\ea03",
-		"clock-solid": "\ea04",
-		"clock": "\ea05",
-		"discount-border": "\ea06",
-		"fb": "\ea07",
-		"instagram": "\ea08",
-		"like-border": "\ea09",
-		"mail": "\ea0a",
-		"odnoklassniki": "\ea0b",
-		"phone": "\ea0c",
-		"play": "\ea0d",
-		"point": "\ea0e",
-		"shield-border": "\ea0f",
-		"user": "\ea10",
-		"vk": "\ea11"
+		"arrow-right": "\ea02",
+		"check": "\ea03",
+		"clock-border": "\ea04",
+		"clock-light": "\ea05",
+		"clock-solid": "\ea06",
+		"clock": "\ea07",
+		"discount-border": "\ea08",
+		"fb": "\ea09",
+		"instagram": "\ea0a",
+		"like-border": "\ea0b",
+		"mail": "\ea0c",
+		"odnoklassniki": "\ea0d",
+		"phone": "\ea0e",
+		"play": "\ea0f",
+		"point": "\ea10",
+		"shield-border": "\ea11",
+		"user": "\ea12",
+		"vk": "\ea13"
 	)
 ));
 

@@ -23,6 +23,15 @@
     margin-bottom: 50px;
   }
 
+  &__time {
+    color: #979797;
+    margin-bottom: 20px;
+    .icon {
+      margin-right: 0.5em;
+      color: $main-color;
+    }
+  }
+
   &__banner {
     margin-left: ($grid-gutter-width / -2);
     margin-right: ($grid-gutter-width / -2);

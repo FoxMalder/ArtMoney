@@ -6,14 +6,19 @@ $breadcrumb-item-padding: 1em;
   padding: 0;
   margin-bottom: $breadcrumb-margin-bottom;
   list-style: none;
-  font-size: 18px;
+  font-size: 14px;
+  line-height: 25px;
   //background-color: $breadcrumb-bg;
   //@include border-radius($breadcrumb-border-radius);
 
+  @include media-breakpoint-up(xl) {
+    font-size: 18px;
+
+  }
   &__item {
     // The separator between breadcrumbs (by default, a forward-slash: "/")
+      padding-right: $breadcrumb-item-padding;
     + .breadcrumb__item {
-      padding-left: $breadcrumb-item-padding;
 
       &::before {
         display: inline-block; // Suppress underlining of the separator in modern browsers

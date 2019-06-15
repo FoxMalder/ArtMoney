@@ -1,403 +1,76 @@
 <!DOCTYPE html>
 <html lang="<%= lang || 'ru' %>">
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   
-  <title><%= title %></title>
+  <title>Документы и лицензии | ArtMoney</title>
 </head>
 <body>
-<header class="header">
-  <div class="container">
-    <div class="header__inner">
-      <button class="menu-button">
-        <span></span>
-      </button>
-      
-      <a class="header__logo" href="/" title="На главную">
-        <img alt="ArtMoney" src="<%= require(`./img/${project}/logo-black.png`) %>">
-      </a>
-      <div class="header__nav">
-        <div class="header__switch">
-          <% if (project === 'artcar') { %>
-            <a class="header__switch-link active" href="#">Рассрочка на авто</a>
-            <a class="header__switch-link" href="#" disabled>Займ под авто</a>
-          <% } else { %>
-            <a class="header__switch-link" href="https://artcar.uz">Рассрочка на авто</a>
-            <a class="header__switch-link active" href="#">Займ под авто</a>
-          <% } %>
-        </div>
-        <div class="header__contacts">
-          <a class="header__tel" href="tel:<%= phone[0].replace(/[^0-9/+/]/g, '') %>">
-            <i class="icon icon-phone"></i><%= phone[0] %>
-          </a>
-          <a class="header__call-me" data-fancybox data-src="#call-me" href="javascript:;">
-            Заказать звонок
-          </a>
-        </div>
-        <div class="header__social">
-          <% if (social) { %>
-            <div class="social-link">
-              <% for (const item in social) { %>
-                <a class="social-link__link" href="<%= social[item] %>" target="_blank">
-                  <i class="icon icon-<%=
-                    (item === 'ok' && 'odnoklassniki') || (item === 'inst' && 'instagram') || item
-                  %>"></i>
-                </a>
-              <% } %>
-            </div>
-          <% } %>
-        </div>
-        <!--        <div class="header__language">-->
-        <!--          <span>Выбрать язык:</span>-->
-        <!--          <a class="select-language__link active" href="/">RU</a>-->
-        <!--          <a class="select-language__link" href="/uz.index.html">UZ</a>-->
-        <!--        </div>-->
-      </div>
-    </div>
-  </div>
-</header>
-<div class="wrapper">
-  <section class="landing-hero">
-    <div class="container">
-      <div class="landing-hero__inner">
-        <h1 class="landing-hero__title">
-          Быстрый займ<br> под залог ПТС<br> в Ташкенте
-        </h1>
-        <div class="landing-hero__list">
-          <div class="hero-points">
-            <div class="hero-points__point hero-points__point_1">
-              <svg class="hero-points__icon">
-                <use xlink:href="images/sprite.svg#sprite-clock"></use>
-              </svg>
-              <div class="hero-points__text">
-                Займ на любые<br> цели
-              </div>
-            </div>
-            <div class="hero-points__point hero-points__point_2">
-              <svg class="hero-points__icon">
-                <use xlink:href="images/sprite.svg#sprite-taxi"></use>
-              </svg>
-              <div class="hero-points__text">
-                Авто остается<br> у вас
-              </div>
-            </div>
-            <div class="hero-points__point hero-points__point_3">
-              <svg class="hero-points__icon">
-                <use xlink:href="images/sprite.svg#sprite-like"></use>
-              </svg>
-              <div class="hero-points__text">
-                Моментальное<br> одобрение
-              </div>
-            </div>
-            <div class="hero-points__point hero-points__point_4">
-              <svg class="hero-points__icon">
-                <use xlink:href="images/sprite.svg#sprite-discount"></use>
-              </svg>
-              <div class="hero-points__text">
-                Самая низкая<br> процентная ставка
-              </div>
-            </div>
-            <div class="hero-points__point hero-points__point_5">
-              <svg class="hero-points__icon">
-                <use xlink:href="images/sprite.svg#sprite-exam"></use>
-              </svg>
-              <div class="hero-points__text">
-                Минимум<br> документов
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="landing-hero__description">
-          Оставьте заявку на получение займа
-        </div>
-        <div class="landing-hero__form">
-          <form class="form-vertical">
-            <div class="form-vertical__input-container">
-              <div class="input-group input-group_icon">
-                <svg class="input-group__icon">
-                  <use xlink:href="images/sprite.svg#sprite-profile"></use>
-                </svg>
-                <input autocomplete="name" class="input-group__input" name="name" placeholder="Введите ФИО" required type="text">
-              </div>
-              <div class="input-group input-group_icon">
-                <svg class="input-group__icon">
-                  <use xlink:href="images/sprite.svg#sprite-phone"></use>
-                </svg>
-                <input autocomplete="tel" class="input-group__input" name="tel" placeholder="Введите телефон" required type="tel">
-              </div>
-            </div>
-            <div class="form-vertical__button-container">
-              <button class="btn" type="submit">Оформить сейчас!</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="landing-steps am-section-steps">
-    <div class="container">
-      <div class="landing-steps__inner">
-        <div class="landing-steps__step">
-          Заполните заявку и узнайте решение сразу
-        </div>
-        <div class="landing-steps__step">
-          С вами сважется менеджер и назначит вам встречу в офисе
-        </div>
-        <div class="landing-steps__step">
-          Вы приедете в назначеную дату и получите деньги
-        </div>
-      </div>
-    </div>
-  </div>
+
+<%= require('./templates/header.ejs')({ url: 'am-reviews.html' }) %>
+
+<main class="wrapper">
   
-  <section class="landing-calculator">
+  <section class="page-hero pb-0">
     <div class="container">
-      <div class="landing-calculator__card calculator-card card">
-        <h2 class="calculator-card__title">Калькулятор займа</h2>
-        <div class="calculator-card__form-group" id="calc-price">
-          <div class="calculator-card__label">Сумма займа:</div>
-          <span class="calculator-card__val">0</span>
-          <div class="calculator-card__range"></div>
-        </div>
-        <div class="calculator-card__form-group" id="calc-term">
-          <div class="calculator-card__label">Срок займа:</div>
-          <span class="calculator-card__val">0</span>
-          <div class="calculator-card__range"></div>
-        </div>
-        <div class="calculator-card__total">
-          <div class="calculator-card__total-text">
-            Ежемесячный <br>платёж составит:
-          </div>
-          <div class="calculator-card__total-value" id="calc-total">4 167 сўм</div>
-        </div>
-        <div class="calculator-card__bottom">
-          <button class="calculator-card__button btn" data-fancybox data-src="#call-me">Оформить займ</button>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="landing-about">
-    <div class="container">
-      <h2 class="landing-about__title">
-        Компания "ARTMONEY" - <br> <i class="selected">одна из самых надежных</i> <br> мирофинансовых <br> организаций
-        страны
-      </h2>
-      <ul class="landing-about__list">
-        <li class="landing-about__item">Работаем с клиентами исключительно в рамках законодательства</li>
-        <li class="landing-about__item">Являемся частью холдинга ARTUM GROUP</li>
-      </ul>
-    </div>
-  </section>
-  <section class="am-landing-give-email">
-    <div class="container">
-      <div class="am-landing-give-email__inner">
-        <h2 class="am-landing-give-email__title">
-          Оставьте ваш E-mail<br> и мы <i class="selected">отправим Вам<br> инструкцию:</i>
-        </h2>
-        <div class="am-landing-give-email__quote">
-          Как правильно пользоваться<br> заемными средствами, чтобы<br> не переплачивать комиссию
-        </div>
-        <div class="am-landing-give-email__bottom">
-          <button class="btn">Оставить E-Mail</button>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-question">
-    <div class="container">
-      <div class="section-question__inner">
-        <div class="section-question__form card">
-          <h2 class="section-question__title">
-            Остались вопросы? <i class="selected">Мы с радостью на них ответим!</i>
-          </h2>
-          <div class="section-question__link">
-            <a class="phone-link-round" href="tel:<%= phone[0].replace(/[^0-9/+/]/g, '') %>">
-              <span class="phone-link-round__icon"><i class="icon icon-phone"></i></span>
-              <span class="phone-link-round__tel"><%= phone[0] %></span>
-            </a>
-          </div>
-          <p class="section-question__description">
-            Или оставьте заявку и мы перезвоним вам <span class="selected">в течение 5 минут</span>
-          </p>
-          <form class="form-vertical">
-            <div class="form-vertical__input-container">
-              <label class="input-group input-group_icon">
-                <svg class="input-group__icon">
-                  <use xlink:href="images/sprite.svg#sprite-profile"></use>
-                </svg>
-                <input autocomplete="name" class="input-group__input" name="name" placeholder="Введите ФИО" required type="text">
-              </label> <label class="input-group input-group_icon">
-                <span class="input-group__icon">
-                  <i class="icon icon-phone"></i>
-                </span>
-                <input autocomplete="tel" class="input-group__input" name="tel" placeholder="Введите телефон" required type="tel">
-              </label>
-            </div>
-            <div class="form-vertical__button-container">
-              <button class="btn" type="submit">Оформить сейчас!</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section-slogan">
-    <div class="section-slogan__block">
-      <div class="section-slogan__shield"></div>
-      <h2 class="section-slogan__title">
-        <span class="selected">ARTMONEY</span> - деньги<br> в вашем кармане
-      </h2>
-      <p class="section-slogan__subtitle">Безопасно. Быстро. Надежно</p>
-    </div>
-    <div class="section-slogan__circle-1"></div>
-    <div class="section-slogan__circle-2"></div>
-  </section>
-</div>
-<footer class="footer">
-  <div class="container">
-    <div class="footer__inner">
-      <div class="footer__contacts">
-        <div class="footer__row">
-          <div class="footer__col">
-            <a class="footer__logo" href="#" title="На главную">
-              <img alt="ArtCar" src="<%= require(`./img/${project}/logo-white.png`) %>">
-            </a>
-          </div>
-          <div class="footer__col">
-            <% for (const tel of phone) { %>
-              <div>
-                <a class="footer__tel" href="tel:<%= tel.replace(/[^0-9/+/]/g, '') %>">
-                  <i class="icon icon-phone"></i><%= tel %>
-                </a>
-              </div>
-            <% } %>
-          </div>
-        </div>
-        <div class="footer__row">
-          <div class="footer__col">
-            <i class="icon icon-point"></i> ул. Пушкина дом 9
-          </div>
-          <div class="footer__col">
-            <i class="icon icon-clock"></i> с 9:00 до 19:00
-          </div>
-        </div>
-        <div class="footer__row">
-          <div class="footer__col">
-            <% if (social) { %>
-              <div class="social-link">
-                <% for (const item in social) { %>
-                  <a class="social-link__link" href="<%= social[item] %>" target="_blank">
-                    <i class="icon icon-<%=
-                      (item === 'ok' && 'odnoklassniki') || (item === 'inst' && 'instagram') || item
-                    %>"></i>
-                  </a>
-                <% } %>
-              </div>
-            <% } %>
-          </div>
-          <div class="footer__col">
-            <div class="legal-info">
-              <div>ООО "РОГА И КОПЫТА"</div>
-              <div>ИНН000000000000</div>
-              <div>ОГРН000000000000</div>
-            </div>
-          </div>
-        </div>
       
-      </div>
-      <div class="footer__map">
-        <div id="footer-map"></div>
+      <nav class="page-hero__breadcrumb" aria-label="breadcrumb">
+        <%= require('./templates/c-breadcrumb.ejs')({
+          breadcrumb: ['Главная', 'О компании', 'Отзывы'],
+          lang: lang
+        }) %>
+      </nav>
+    </div>
+  </section>
+  
+  <section class="s-reviews">
+    <div class="container">
+      <h2 class="s-reviews__title">Отзывы наших клиентов</h2>
+      <div class="swiper-container s-reviews__slider">
+        <div class="swiper-wrapper">
+          <figure class="swiper-slide s-reviews__item">
+            <img src="<%= require(`./img/review-img-1.jpg`) %>" alt="" class="s-reviews__image">
+            <blockquote class="s-reviews__quote">
+              Эти слова совершенно справедливы, однако интервально-прогрессийная континуальная форма начинает
+              септаккорд. Соноропериод представляет собой флэнжер. Очевидно, что крещендирующее хождение трансформирует
+              внетактовый мнимотакт.
+            </blockquote>
+            <footer class="s-reviews__footer"><cite class="s-reviews__name">Петров Евгений</cite></footer>
+          </figure>
+          <figure class="swiper-slide s-reviews__item">
+            <img src="<%= require(`./img/review-img-1.jpg`) %>" alt="" class="s-reviews__image">
+            <blockquote class="s-reviews__quote">
+              Эти слова совершенно справедливы, однако интервально-прогрессийная континуальная форма начинает
+              септаккорд. Соноропериод представляет собой флэнжер. Очевидно, что крещендирующее хождение трансформирует
+              внетактовый мнимотакт.
+            </blockquote>
+            <footer class="s-reviews__footer"><cite class="s-reviews__name">Петров Евгений</cite></footer>
+          </figure>
+          <figure class="swiper-slide s-reviews__item">
+            <img src="<%= require(`./img/review-img-1.jpg`) %>" alt="" class="s-reviews__image">
+            <blockquote class="s-reviews__quote">
+              Эти слова совершенно справедливы, однако интервально-прогрессийная континуальная форма начинает
+              септаккорд. Соноропериод представляет собой флэнжер. Очевидно, что крещендирующее хождение трансформирует
+              внетактовый мнимотакт.
+            </blockquote>
+            <footer class="s-reviews__footer"><cite class="s-reviews__name">Петров Евгений</cite></footer>
+          </figure>
+        </div>
+        <button class="swiper-button-prev"></button>
+        <button class="swiper-button-next"></button>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
+  
+  <%= require('./templates/s-request.ejs')({
+    lang: lang,
+    phone: phone,
+    title: 'Оставьте заявку и получите займ <span class="selected">уже сегодня!</span>'
+  }) %>
+</main>
 
-<form action="/form.php" class="modal" id="call-me" method="post" style="display: none;">
-  <h2 class="modal__title">Закажите звонок</h2>
-  <p class="modal__description">
-    И наш специалист свяжется с Вами <br><span class="selected">в течение 5 минут</span>
-  </p>
-  <div class="modal__form">
-    <div class="form-vertical">
-      <div class="form-vertical__input-container">
-        <div class="input-group input-group_icon">
-          <svg class="input-group__icon">
-            <use xlink:href="images/sprite.svg#sprite-profile"></use>
-          </svg>
-          <input autocomplete="name" class="input-group__input" name="name" placeholder="Введите ФИО" required type="text">
-        </div>
-        <div class="input-group input-group_icon">
-          <svg class="input-group__icon">
-            <use xlink:href="images/sprite.svg#sprite-phone"></use>
-          </svg>
-          <input autocomplete="tel" class="input-group__input" name="tel" placeholder="Введите телефон" required type="tel">
-        </div>
-      </div>
-      <div class="form-vertical__button-container">
-        <button class="btn" type="submit">Оформить сейчас!</button>
-      </div>
-    </div>
-  </div>
-</form>
-<div class="modal" id="thanks" style="display: none;">
-  <h2 class="modal__title">Спасибо за заявку!</h2>
-  <p class="modal__description">
-    Наш специалист свяжется с Вами <br><span class="selected">в течение 5 минут</span>
-  </p>
-  <button class="btn" data-fancybox-close>Ок</button>
-</div>
+<%= require('./templates/footer.ejs')() %>
 
-<script>
-  const app = {
-    units: {
-      price: 'сўм',
-      month: ['месяц', 'месяца', 'месяцев'],
-      percent: '%',
-    },
-    calculator: {
-      data: {
-        price: {
-          id: 'calc-price',
-          type: 'price',
-          min: 0,
-          max: 305 * 1000000,
-          value: 10 * 1000000,
-          step: 1000000,
-        },
-        term: {
-          id: 'calc-term',
-          type: 'month',
-          min: 13,
-          max: 60,
-          value: 60,
-          step: 1,
-        },
-      },
-      total: {
-        id: 'calc-total',
-        type: 'price',
-        formula: () => {
-          // Переплата в год
-          const rate = 0.25;
-
-          // Итоговая сумма кредита
-          const total = app.calculator.data.price.value;
-          // Расчет аннуитетного платежа, где rate - ставка в месяц
-          // return Math.ceil( total * rate / (1 - Math.pow(1 + rate, 0 - app.calculator.data.term.value)));
-
-          return Math.ceil(total * (rate * app.calculator.data.term.value + 12) / (12 * app.calculator.data.term.value));
-        },
-      },
-    },
-    mapOptions: {
-      center: [41.240084, 69.216396],
-      zoom: 16,
-      controls: [],
-      url: 'https://api-maps.yandex.ru/2.1/?lang=ru_RU',
-    },
-  };
-</script>
 </body>
 </html>

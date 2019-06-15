@@ -105,3 +105,91 @@ const pageList3 = [
     </div>
   </div>
 </footer>
+
+
+<form action="/form.php" class="modal" id="call-me" method="post" style="display: none;">
+  <h2 class="modal__title">Закажите звонок</h2>
+  <p class="modal__description">
+    И наш специалист свяжется с Вами <br><span class="selected">в течение 5 минут</span>
+  </p>
+  <div class="modal__form">
+    <div class="form-vertical">
+      <div class="form-vertical__input-container">
+        <div class="input-group input-group_icon">
+          <svg class="input-group__icon">
+            <use xlink:href="images/sprite.svg#sprite-profile"></use>
+          </svg>
+          <input autocomplete="name" class="input-group__input" name="name" placeholder="Введите ФИО" required type="text">
+        </div>
+        <div class="input-group input-group_icon">
+          <svg class="input-group__icon">
+            <use xlink:href="images/sprite.svg#sprite-phone"></use>
+          </svg>
+          <input autocomplete="tel" class="input-group__input" name="tel" placeholder="Введите телефон" required type="tel">
+        </div>
+      </div>
+      <div class="form-vertical__button-container">
+        <button class="btn" type="submit">Оформить сейчас!</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="modal" id="thanks" style="display: none;">
+  <h2 class="modal__title">Спасибо за заявку!</h2>
+  <p class="modal__description">
+    Наш специалист свяжется с Вами <br><span class="selected">в течение 5 минут</span>
+  </p>
+  <button class="btn" data-fancybox-close>Ок</button>
+</div>
+
+<script>
+  const app = {
+    units: {
+      price: 'сўм',
+      month: ['месяц', 'месяца', 'месяцев'],
+      percent: '%',
+    },
+    calculator: {
+      data: {
+        price: {
+          id: 'calc-price',
+          type: 'price',
+          min: 0,
+          max: 305 * 1000000,
+          value: 10 * 1000000,
+          step: 1000000,
+        },
+        term: {
+          id: 'calc-term',
+          type: 'month',
+          min: 13,
+          max: 60,
+          value: 60,
+          step: 1,
+        },
+      },
+      total: {
+        id: 'calc-total',
+        type: 'price',
+        formula: () => {
+          // Переплата в год
+          const rate = 0.25;
+
+          // Итоговая сумма кредита
+          const total = app.calculator.data.price.value;
+          // Расчет аннуитетного платежа, где rate - ставка в месяц
+          // return Math.ceil( total * rate / (1 - Math.pow(1 + rate, 0 - app.calculator.data.term.value)));
+
+          return Math.ceil(total * (rate * app.calculator.data.term.value + 12) / (12 * app.calculator.data.term.value));
+        },
+      },
+    },
+    mapOptions: {
+      center: [41.240084, 69.216396],
+      zoom: 16,
+      controls: [],
+      url: 'https://api-maps.yandex.ru/2.1/?lang=ru_RU',
+    },
+  };
+</script>

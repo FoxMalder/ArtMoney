@@ -1,32 +1,30 @@
 <section class="section s-request">
   <div class="container">
-    <form action="/mail.php" method="post" class="s-request__form card">
-      <h2 class="s-request__title"><%= title || '' %></h2>
-      <div class="s-request__link">
-        <a class="phone-link-round" href="tel:<%= phone[0].replace(/[^0-9/+/]/g, '') %>">
-          <span class="phone-link-round__icon"><i class="icon icon-phone"></i></span>
-          <span class="phone-link-round__tel"><%= phone[0] %></span>
-        </a>
-      </div>
-      <fieldset class="s-request__fieldlist">
-        <p class="s-request__field">
-          <label class="input-group input-group_icon">
-              <span class="input-group__icon">
-                <i class="icon icon-user"></i>
-              </span>
-            <input autocomplete="name" class="input-group__input" name="name" placeholder="Введите ФИО" required="" type="text">
-          </label>
-        </p>
-        <p class="s-request__field">
-          <label class="input-group input-group_icon">
-              <span class="input-group__icon">
-                <i class="icon icon-phone"></i>
-              </span>
-            <input autocomplete="tel" class="input-group__input" name="tel" placeholder="Введите телефон" required="" type="tel">
-          </label>
-        </p>
-        <button class="s-request__button btn" type="submit">Получить</button>
-      </fieldset>
-    </form>
+    <div class="s-request__form">
+      <form action="/mail.php" method="post" class="form-card">
+        <h2 class="form-card__title"><%= title || '' %></h2>
+        <div class="form-card__link">
+          <a class="phone-link-round" href="tel:<%= phone[0].replace(/[^0-9/+/]/g, '') %>">
+            <span class="phone-link-round__icon"><i class="icon icon-phone"></i></span>
+            <span class="phone-link-round__tel"><%= phone[0] %></span>
+          </a>
+        </div>
+        <fieldset class="form-card__fieldlist">
+          <p class="form-card__field">
+            <label class="input-group input-group_icon">
+              <span class="input-group__icon"><i class="icon icon-user"></i></span>
+              <input autocomplete="name" class="input-group__input" name="name" placeholder="Введите ФИО" required="" type="text">
+            </label>
+          </p>
+          <p class="form-card__field">
+            <label class="input-group input-group_icon">
+              <span class="input-group__icon"><i class="icon icon-phone"></i></span>
+              <input autocomplete="tel" class="input-group__input" name="tel" placeholder="Введите телефон" required="" type="tel">
+            </label>
+          </p>
+          <button class="form-card__button btn" type="submit">Получить</button>
+        </fieldset>
+      </form>
+    </div>
   </div>
 </section>

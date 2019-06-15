@@ -72,7 +72,7 @@ const menuList = [
   },
   {
     title: 'Контакты',
-    url: '#'
+    url: 'am-contacts.html'
   }
 ]
 %>
@@ -85,6 +85,14 @@ const menuList = [
           <li class="breadcrumb__item">
             <a href="<%= menuList[t].url %>"><%= menuList[t].title %></a>
           </li>
+        <% } else if (menuList[t].hasOwnProperty('subList')) { %>
+          <% for (let n in menuList[t].subList) { %>
+            <% if (breadcrumb[i] == menuList[t].subList[n].title) { %>
+              <li class="breadcrumb__item">
+                <a href="<%= menuList[t].subList[n].url %>"><%= menuList[t].subList[n].title %></a>
+              </li>
+            <% } %>
+          <% } %>
         <% } %>
       <% } %>
     <% } else { %>

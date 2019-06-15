@@ -15,7 +15,6 @@ import 'whatwg-fetch';
 import noUiSlider from 'nouislider';
 import YandexMapsLoader from 'ymaps';
 
-import iconPoint from './../img/map-point.svg';
 
 $.fancybox.defaults.closeExisting = true;
 $.fancybox.defaults.lang = 'ru';
@@ -73,30 +72,6 @@ function ready(fn) {
   } else {
     document.addEventListener('DOMContentLoaded', fn);
   }
-}
-
-class Menu {
-  constructor() {
-    this.isOpen = false;
-    this.menuButton = document.querySelector('.menu-button');
-    this.menu = document.querySelector('.header__nav');
-
-    this.menuButton.addEventListener('click', this.toggleMenu);
-  };
-
-  toggleMenu = () => {
-    if (!this.isOpen) {
-      this.menuButton.classList.add('active');
-      this.menu.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      this.isOpen = true;
-    } else {
-      this.menuButton.classList.remove('active');
-      this.menu.classList.remove('active');
-      document.body.style.overflow = '';
-      this.isOpen = false;
-    }
-  };
 }
 
 class Calculator {
@@ -253,43 +228,114 @@ function sendForm(event) {
     });
 }
 
-function headerControl() {
-  console.log(window.scrollY, window.pageYOffset);
-  if (window.scrollY > 200) {
-    document.querySelector('.header').classList.add('header_minimal');
-  } else {
-    document.querySelector('.header').classList.remove('header_minimal');
+class Header {
+  constructor() {
+
+    this.$header = $('.header');
+    this.$menuButton = $('[data-menu="button"]');
+    this.$dropdownLink = $('[data-menu="dropdown"]');
+    this.$dropdownBody = $('[data-menu="second-level"]');
+
+    this.headerControl();
+    document.addEventListener('scroll', this.headerControl);
+
+
+    this.$menuButton.on('click', (event) => {
+      event.preventDefault();
+
+      if (this.$menuButton.hasClass('menu-button_back')) { // Назад
+        this.$dropdownBody.removeClass('active');
+        this.$dropdownLink.removeClass('active');
+        this.$header.removeClass('header_open-menu');
+        this.$menuButton.removeClass('menu-button_back');
+
+      } else if (this.$menuButton.hasClass('menu-button_active')) { // Закрыть меню
+        this.closeMenu();
+
+      } else { // Открыть меню
+        this.openMenu();
+      }
+    });
+
+
+    this.$dropdownLink.on('click', (event) => {
+      event.preventDefault();
+
+      const selector = event.currentTarget.getAttribute('data-src');
+
+      if ($(selector).hasClass('active')) {
+        $(selector).removeClass('active');
+        $(event.currentTarget).removeClass('active');
+        this.$header.removeClass('header_open-menu');
+        this.$menuButton.removeClass('menu-button_back');
+      } else {
+        this.$dropdownBody.removeClass('active');
+        $(selector).addClass('active');
+
+        this.$dropdownLink.removeClass('active');
+        $(event.currentTarget).addClass('active');
+
+        this.$header.addClass('header_open-menu');
+        this.$menuButton.addClass('menu-button_back');
+      }
+    });
+  }
+
+  headerControl = () => {
+    if (window.scrollY > 200) {
+      this.$header.addClass('header_compact');
+    } else {
+      this.$header.removeClass('header_compact');
+    }
+  };
+
+  closeMenu() {
+    this.$menuButton.removeClass('menu-button_active');
+    this.$header.removeClass('header_active');
+    $('html').removeClass('noscroll');
+  }
+
+  openMenu() {
+    this.$menuButton.addClass('menu-button_active');
+    this.$header.addClass('header_active');
+    $('html').addClass('noscroll');
   }
 }
 
+function initMap(id) {
+  YandexMapsLoader
+    .load(app.mapOptions.url)
+    .then((Maps) => {
+      const myPlacemark = new Maps.Placemark(
+        app.mapOptions.center,
+        {
+          iconCaption: 'ArtMoney',
+        },
+        {
+          preset: 'islands#icon',
+          iconColor: '#75c045',
+        },
+      );
+
+      const map = new Maps.Map(id, {
+        center: app.mapOptions.center,
+        zoom: app.mapOptions.zoom,
+        controls: app.mapOptions.controls,
+      });
+
+      map.geoObjects.add(myPlacemark);
+    })
+    .catch(error => console.log('Failed to load Yandex Maps', error));
+}
+
 ready(() => {
-  new Menu();
   new Calculator();
+  new Header();
 
+  if (document.getElementById('map')) {
+    initMap('map');
+  }
 
-  headerControl();
-  document.addEventListener('scroll', headerControl);
-
-
-  $('.navbar-nav__link_dropdown').on('click', (event) => {
-    event.preventDefault();
-
-    const selector = event.currentTarget.getAttribute('data-src');
-
-    if ($(selector).hasClass('active')) {
-      $(selector).removeClass('active');
-      $(event.currentTarget).removeClass('active');
-      $('.header').removeClass('header_open-menu');
-    } else {
-      $('.header__nav-bottom').removeClass('active');
-      $(selector).addClass('active');
-
-      $('.navbar-nav__link_dropdown').removeClass('active');
-      $(event.currentTarget).addClass('active');
-
-      $('.header').addClass('header_open-menu');
-    }
-  });
 
   // const formList = document.querySelectorAll('form');
   //

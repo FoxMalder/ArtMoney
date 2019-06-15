@@ -21,7 +21,7 @@ $body-color: #1e1e1e;
 
 $grid-gutter-width: 30px;
 $container-max-widths: (
-  sm: 540px,
+  sm: 320px + $grid-gutter-width,
   md: 768px + $grid-gutter-width,
   //lg: 960px,
   xl: 1170px + $grid-gutter-width
@@ -82,6 +82,7 @@ $custom-range-thumb-disabled-bg:             #adb5bd !default;
 
 @import 'global';
 @import 'components/breadcrumb';
+@import 'components/form-card';
 
 @import 'site/header';
 @import 'site/footer';
@@ -111,7 +112,9 @@ $custom-range-thumb-disabled-bg:             #adb5bd !default;
 //    //background: url('../img/rm/zalog-pts-1920.png') center top no-repeat;
 //    //background: url('../img/rm/bad-history-1920.png') center top no-repeat;
 //    //background: url('../img/rm/property-1920.png') center top no-repeat;
-//    background: url('../img/rm/avtolombard-1920.png') center top no-repeat;
+//    //background: url('../img/rm/avtolombard-1920.png') center top no-repeat;
+//    //background: url('../img/rm/contacts-1920.png') center 32px no-repeat;
+//    background: url('../img/rm/licenses-1920.png') center 32px no-repeat;
 //    background-size: 1920px auto;
 //  }
 //}

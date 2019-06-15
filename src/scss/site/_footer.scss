@@ -20,11 +20,11 @@
   }
 
   &__inner {
+    padding: 40px 0;
     @include media-breakpoint-up(md) {
       display: flex;
       height: 360px;
       //align-items: center;
-      padding: 40px 0;
 
 
       flex-direction: column;
@@ -48,20 +48,26 @@
   }
 
   &__menu {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
-    max-height: 100%;
+    margin-top: 40px;
     //flex: 1 0;
     @include media-breakpoint-up(md) {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: space-between;
+      max-height: 100%;
       width: 520px;
+      margin-top: 0;
     }
   }
 }
 
 .footer-nav {
+  margin-bottom: 30px;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
   &__title {
     font-size: 18px;
     font-weight: 600;
@@ -88,16 +94,25 @@
 }
 
 .footer-contact {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & ~ & {
+    margin-top: 30px;
+  }
   @include media-breakpoint-up(md) {
-    display: flex;
-    align-items: center;
-    & ~ & {
-      margin-top: 30px;
-    }
+    justify-content: flex-start;
+    //& ~ & {
+    //  margin-top: 30px;
+    //}
   }
 
   &__icon {
+    display: inline-block;
+    margin-right: 14px;
     color: $main-color;
+    font-size: 12px;
     @include media-breakpoint-up(md) {
       display: flex;
       align-items: center;
@@ -107,11 +122,11 @@
       border: 1px solid $main-color;
       border-radius: 50%;
       margin-right: 24px;
-      font-size: 12px;
     }
   }
 
   &__link {
+    display: inline-block;
     color: #fff;
     font-family: $font-family-adelle;
     font-size: 18px;
